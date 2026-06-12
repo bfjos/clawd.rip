@@ -20,6 +20,7 @@ const icons = {
   businessInsider: "/source-icons/favicons/businessInsider.png",
   classAction: "/source-icons/favicons/classAction.webp",
   codeRabbit: "/source-icons/favicons/codeRabbit.png",
+  decrypt: "/source-icons/favicons/decrypt.png",
   economicTimes: "/source-icons/favicons/economicTimes.avif",
   forbes: "/source-icons/favicons/forbes.webp",
   fortune: "/source-icons/favicons/fortune.webp",
@@ -180,6 +181,16 @@ const source = {
     url: "https://www.classaction.org/media/bartz-et-al-v-anthropic-pbc_1.pdf",
     icon: icons.classAction,
   },
+  decryptFableApology: {
+    title: "Decrypt",
+    url: "https://decrypt.co/370831/anthropic-apologizes-claude-fable-5-secret-censorship",
+    icon: icons.decrypt,
+  },
+  decryptFableBacklash: {
+    title: "Decrypt",
+    url: "https://decrypt.co/370688/internet-furious-anthropic-claude-mythos-fable-5",
+    icon: icons.decrypt,
+  },
   economicTimesXai: {
     title: "Economic Times",
     url: "https://economictimes.indiatimes.com/tech/artificial-intelligence/xai-locked-out-of-claude-as-anthropic-enforces-competitor-rules/articleshow/126466343.cms",
@@ -188,6 +199,11 @@ const source = {
   fortuneClaudeCode: {
     title: "Fortune",
     url: "https://fortune.com/2026/04/24/anthropic-engineering-missteps-claude-code-performance-decline-user-backlash/",
+    icon: icons.fortune,
+  },
+  fortuneFableSabotage: {
+    title: "Fortune",
+    url: "https://fortune.com/2026/06/10/anthropic-accu-claude-fable-5-limits-capabilities-ai-researchers-developers/",
     icon: icons.fortune,
   },
   ftClaudeBot: {
@@ -248,6 +264,11 @@ const source = {
   interconnectsDistillation: {
     title: "Interconnects",
     url: "https://www.interconnects.ai/p/how-much-does-distillation-really",
+    icon: "/source-icons/favicons/interconnects.webp",
+  },
+  interconnectsFableSafety: {
+    title: "Interconnects",
+    url: "https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety",
     icon: "/source-icons/favicons/interconnects.webp",
   },
   reutersHallucination: {
@@ -786,6 +807,20 @@ export const timelineEvents: TimelineEvent[] = [
       source.claudeDevsAgentSdkCreditThread,
       source.claudeHelpAgentSdkPlanCredit,
       source.redditAgentSdkClarify,
+    ],
+    category: "Policy",
+  },
+  {
+    date: "2026-06-09",
+    period: "Jun 9-11, 2026",
+    title: "Fable 5's Stealth Nerf on Frontier ML Work Triggers Uproar",
+    summary:
+      "Anthropic slipped a quiet sabotage rule into the 319-page system card for its new Mythos-class Fable 5. The model quietly degrades its own answers when it thinks you're doing pretraining, distributed training infrastructure, or chip design, forcing reproducibility issues while Anthropic keeps full power. After 48 hours of backlash, the company apologized and swapped the hidden sabotage for a visible reroute to Opus 4.8, then warned the new classifier will overblock.",
+    sources: [
+      source.fortuneFableSabotage,
+      source.decryptFableBacklash,
+      source.decryptFableApology,
+      source.interconnectsFableSafety,
     ],
     category: "Policy",
   },
