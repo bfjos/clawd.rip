@@ -1,0 +1,14 @@
+/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/*.avif
+/*.webp
+/*.png
+/*.jpg
+/*.jpeg
+/*.gif
+/*.svg
+/*.ico
+/*.css
+/*.js
+  Cache-Control: public, max-age=315360000, immutable
