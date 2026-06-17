@@ -2,22 +2,22 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "claude-code-rate-limits",
-  deck: "Anthropic announced weekly rate limits for Claude Code on July 28, 2025, less than two months after the tool launched on June 4, citing always-on background loops and account sharing as the cause of infrastructure strain that had already produced at least seven outages in one month.",
+  deck: "2025年7月28日、Anthropic は Claude Code に週間レート制限を発表した。6月4日の公開から2カ月も経たず、常時稼働のバックグラウンドループやアカウント共有がインフラ負荷の原因だとして、すでに1カ月に7回以上の障害を起こしていた。",
   body: [
-    'On July 28, 2025, Anthropic <a href="https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/">announced</a> new weekly rate limits for Claude Pro and Max subscribers, set to take effect August 28, 2025. The limits apply to the $20-per-month Pro plan, the $100-per-month Max plan, and the $200-per-month Max plan. The announcement arrived less than two months after <a href="https://tech.yahoo.com/ai/articles/anthropic-were-glad-claude-code-164658123.html">Claude Code launched on June 4, 2025</a>, meaning the tool went from general release to weekly rations in roughly eight weeks.',
-    'The new restrictions added two weekly limits that reset every seven days—one for overall usage and one specific to Claude Opus 4—layered on top of existing five-hour reset windows, <a href="https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits">according to Slashdot</a>. Estimated weekly allowances break down as follows: Pro users receive 40 to 80 hours of Sonnet 4; $100 Max users receive 140 to 280 hours of Sonnet 4 plus 15 to 35 hours of Opus 4; $200 Max users receive 240 to 480 hours of Sonnet 4 plus 24 to 40 hours of Opus 4, <a href="https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/">TechCrunch reported</a>. Max subscribers who exhaust these allotments may purchase additional usage at standard API rates, which means the $200 plan includes a hard cap that can be lifted with a credit card.',
-    'Anthropic spokesperson Amie Rotherham <a href="https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/">stated</a>, <em>"Claude Code has experienced unprecedented demand since launch. Most users won\'t notice a difference."</em> The company estimated the new limits would apply to <a href="https://x.com/AnthropicAI/status/1949898502688903593">fewer than 5% of subscribers</a> based on current usage patterns. The other 95% were presumably not running the agent continuously in the background 24/7.',
-    'The behaviors targeted were explicitly named as users keeping Claude Code running nonstop around the clock and the sharing or reselling of account credentials, <a href="https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits">Slashdot noted</a>. Anthropic said that <em>"extreme usage by a small number of customers impacts capacity for our broader community,"</em> <a href="https://tech.yahoo.com/ai/articles/anthropic-were-glad-claude-code-164658123.html">citing abuse patterns</a> that included credential reselling and "multi-clauding"—the practice of running about five simultaneous instances. It turns out one Claude per customer was not a suggestion but a capacity plan.',
-    'The rationing followed a month of visible strain. <a href="https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/">TechCrunch reported</a> that Claude Code had suffered at least seven partial or major outages in the month preceding the announcement. The July 28 changes also arrived after <a href="https://tech.yahoo.com/ai/articles/anthropic-were-glad-claude-code-164658123.html">earlier limit adjustments in July 2025</a> that had already drawn user backlash, with subscribers hitting caps faster than expected. On Hacker News, the thread titled "Claude Code weekly rate limits" <a href="https://news.ycombinator.com/item?id=44713757">accumulated 609 points and 705 comments</a>, suggesting that at least 705 people noticed a difference.',
-    'Anthropic told subscribers it was <a href="https://itdaily.com/news/software/anthropic-rate-limits-claude-pro-max/">looking at "supporting long-running use cases through other options in the future."</a> The options were unspecified, though the implication was that always-on coding loops would need to learn to take weekends off.',
+    '2025年7月28日、Anthropic は Claude Pro/Max サブスクライバー向けの新しい週間レート制限を<a href="https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/">発表した</a>。施行は8月28日。対象は月額20ドルの Pro、月額100ドル/200ドルの Max プラン。Claude Code が <a href="https://tech.yahoo.com/ai/articles/anthropic-were-glad-claude-code-164658123.html">2025年6月4日に公開</a> されてから2カ月も経たず、一般提供から週間配給制に移行するのに約8週間しかかからなかった。',
+    '<a href="https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits">Slashdot によると</a>、新制限は全体的な利用上限と Claude Opus 4 専用上限の2つで、既存の5時間リセット枠に上乗せされ、7日ごとにリセットされる。推定の週間許容量は以下の通り。Pro は Sonnet 4 で 40〜80時間。月額100ドルの Max は Sonnet 4 で 140〜280時間、Opus 4 で 15〜35時間。月額200ドルの Max は Sonnet 4 で 240〜480時間、Opus 4 で 24〜40時間、と <a href="https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/">TechCrunch は報じた</a>。Max ユーザーが枠を使い切れば標準 API レートで追加購入できるので、200ドルプランには「クレジットカードで解除できるハードキャップ」がついていることになる。',
+    'Anthropic 広報の Amie Rotherham は<a href="https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/">こう述べた</a>。<em>「Claude Code は公開以来、かつてない需要を経験しています。ほとんどのユーザーは違いを感じないでしょう。」</em>同社は現在の利用パターンから<a href="https://x.com/AnthropicAI/status/1949898502688903593">サブスクライバーの5%未満</a>にしか影響しないと推定。残りの95%はおそらく、エージェントを24時間365日バックグラウンドで回していなかったのだろう。',
+    '<a href="https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits">Slashdot は</a>、対象となる行動として Claude Code を昼夜問わず常時起動したり、アカウント認証情報を共有・転売したりすることを明示的に挙げたと伝えた。Anthropic は<em>「ごく一部の顧客の極端な利用が、より広いコミュニティのキャパシティに影響を与える」</em>とし、<a href="https://tech.yahoo.com/ai/articles/anthropic-were-glad-claude-code-164658123.html">悪用パターン</a>として認証情報の転売や「マルチ・クローディング」——約5つのインスタンスを同時に実行する——を挙げた。結局、「1人1 Claude」は提案事項ではなくキャパシティ計画だったらしい。',
+    '配給制の前には、目に見える負荷の1カ月があった。<a href="https://techcrunch.com/2025/07/28/anthropic-unveils-new-rate-limits-to-curb-claude-code-power-users/">TechCrunch は</a>、発表前の1カ月に Claude Code は少なくとも7回の部分/重大障害を起こしていたと報じた。7月28日の変更は、7月の<a href="https://tech.yahoo.com/ai/articles/anthropic-were-glad-claude-code-164658123.html">以前の制限調整</a>の後に行われたが、それもユーザーが予想より早く上限にぶつかると反発を招いていた。Hacker News の「Claude Code weekly rate limits」スレッドは<a href="https://news.ycombinator.com/item?id=44713757">609ポイントと705コメント</a>を集め、少なくとも705人は違いを感じていたようだ。',
+    'Anthropic はサブスクライバーに対し、<a href="https://itdaily.com/news/software/anthropic-rate-limits-claude-pro-max/">「将来的に長時間実行のユースケースを別のオプションでサポートすることを検討している」</a>と伝えた。オプションの詳細は不明だが、常時稼働のコーディングループは週末を休むことを覚える必要があるという含みだ。',
   ],
   receipts: [
-    "Claude Code launched June 4, 2025; weekly limits announced July 28, 2025.",
-    "Pro users: 40-80 hours Sonnet 4. $100 Max: 140-280 hours Sonnet 4 plus 15-35 hours Opus 4. $200 Max: 240-480 hours Sonnet 4 plus 24-40 hours Opus 4.",
-    "Anthropic estimated fewer than 5% of subscribers would be affected.",
-    "Claude Code experienced at least seven partial or major outages in the month before the announcement.",
-    "The Hacker News discussion reached 609 points and 705 comments.",
-    'Abuse patterns included credential reselling and "multi-clauding" (about five simultaneous instances).',
+    "Claude Code は 2025年6月4日に公開。週間制限は 2025年7月28日発表。",
+    "Pro: Sonnet 4 で 40〜80時間。月額100ドル Max: Sonnet 4 で 140〜280時間 + Opus 4 で 15〜35時間。月額200ドル Max: Sonnet 4 で 240〜480時間 + Opus 4 で 24〜40時間。",
+    "Anthropic は影響を受けるのはサブスクライバーの5%未満と推定。",
+    "発表前の1カ月に Claude Code は少なくとも7回の部分/重大障害を起こしていた。",
+    "Hacker News の議論は 609ポイント、705コメントに達した。",
+    '悪用パターンには認証情報の転売と「マルチ・クローディング」（約5インスタンス同時実行）が含まれた。',
   ],
   reactions: [
     {
@@ -25,7 +25,7 @@ export const detail: EventDetail = {
       author: "@AnthropicAI",
       meta: "Official Anthropic announcement tweet, July 28, 2025",
       quote:
-        "We're rolling out new weekly rate limits for Claude Pro and Max in late August. We estimate they'll apply to less than 5% of subscribers based on current usage.",
+        "8月下旬、Claude Pro/Max 向けの新しい週間レート制限を導入します。現在の利用状況から、影響を受けるのはサブスクライバーの5%未満と推定しています。",
       url: "https://x.com/AnthropicAI/status/1949898502688903593",
     },
     {
@@ -33,7 +33,7 @@ export const detail: EventDetail = {
       author: "koolba",
       meta: "Top comment on the 609-point HN thread",
       quote:
-        "There's no lobster rolls stuffed into a backpack here. It's using the service as it was pitched, an all-you-can-eat buffer of API calls. Anything that limits what that means is scaling back access to that buffet... What's worse with this model is that a runaway process could chew through your weekly API allotment on a wild goose chase. Whereas before the 5-hour quantization was both a limiter and guard rails.",
+        "リュックにロブスターロールを詰め込んでる話じゃない。これは「API コール食べ放題」として売られたサービスを、売られた通りに使ってるだけだ。それを制限するのは、食べ放題バイキングへのアクセスを縮小するのと同じ……このモデルで一番まずいのは、暴走したプロセスが鳥のマネをしながら週間 API 枠を食い潰す可能性があること。以前の5時間リセットは上限であり、同時にガードレールでもあった。",
       url: "https://news.ycombinator.com/item?id=44713757",
     },
     {
@@ -41,7 +41,7 @@ export const detail: EventDetail = {
       author: "jedberg",
       meta: "HN thread comment",
       quote:
-        "The tragedy of the commons is the concept that, if many people enjoy unfettered access to a finite, valuable resource, such as a GPU farm, they will tend to overuse it and may end up destroying its value altogether. That is exactly what happened here. The price was fine if everyone upheld their moral obligation not to abuse it.",
+        "共有地の悲劇とは、多くの人が GPU ファームのような有限で貴重な資源を制限なく利用できると、使いすぎてその価値を完全に破壊してしまうという考え方だ。ここで起きたのはまさにそれ。誰も道徳的義務を守らなければ、価格は成立しなかった。",
       url: "https://news.ycombinator.com/item?id=44713757",
     },
     {
@@ -49,14 +49,14 @@ export const detail: EventDetail = {
       author: "steveklabnik",
       meta: "HN comment; steveklabnik works at Anthropic",
       quote:
-        "I don't think it's that simple. We'll see though, I am very curious if I'm in that 5% or not.",
+        "それほど単純な話じゃないと思う。でも分からないから見てみたい。自分がその5%に入るのかどうか、非常に興味がある。",
       url: "https://news.ycombinator.com/item?id=44713757",
     },
     {
       platform: "other",
       author: "Anonymous Coward (Slashdot)",
       meta: 'Slashdot comment, moderated "Funny"',
-      quote: "It has already reached the enshittification stage!",
+      quote: "もうエンシティフィケーション段階に到達してるな！",
       url: "https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits",
     },
     {
@@ -64,11 +64,11 @@ export const detail: EventDetail = {
       author: "commodore73 (Slashdot)",
       meta: 'Slashdot comment, moderated "Insightful"',
       quote:
-        "If you're willing to pay $200 per month for coding assistance, I suspect you're a shit developer.",
+        "月200ドルも払ってコーディング支援を受けようとするなら、あなたは三流開発者なんだろうね。",
       url: "https://developers.slashdot.org/story/25/07/29/0156200/claude-code-users-hit-with-weekly-rate-limits",
     },
   ],
   images: [],
   aftermath:
-    "The new weekly limits are scheduled to take effect August 28, 2025, giving subscribers one month to scale back continuous usage or purchase additional capacity at standard API rates. Anthropic has said it is exploring other options for long-running use cases, though for now the flat-rate model operates on a seven-day cycle.",
+    "新しい週間制限は2025年8月28日に施行される予定で、サブスクライバーには継続利用を縮小するか標準 API レートで追加容量を購入するための1カ月が与えられる。Anthropic は長時間実行のユースケース向けに他の選択肢を検討していると述べているが、当面は定額モデルが7日サイクルで動いている。",
 };

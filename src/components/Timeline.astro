@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import { timelineEvents } from "@/data/timeline";
-import { categoryStyles, getIncidentLayers } from "@/lib/event-visuals";
+import { categoryStyles, displayCategory, getIncidentLayers } from "@/lib/event-visuals";
 
 const displayedTimelineEvents = [...timelineEvents].reverse();
 ---
@@ -24,7 +24,7 @@ const displayedTimelineEvents = [...timelineEvents].reverse();
         class="timeline-order-button ui-text"
         data-order="newest"
       >
-        Oldest first
+        古い順に表示
       </button>
     </div>
     <div class="relative">
@@ -91,7 +91,7 @@ const displayedTimelineEvents = [...timelineEvents].reverse();
                     <span
                       class={`timeline-meta-category ui-text inline-flex items-center rounded-full border px-2.5 py-px text-sm font-medium leading-4 ${categoryStyles[event.category]}`}
                     >
-                      {event.category}
+                      {displayCategory(event.category)}
                     </span>
                   </div>
                   <h2 class="timeline-title mt-4 text-[1.7rem] text-balance font-medium leading-[1.14] text-(--ink) md:text-[1.8rem]">
@@ -110,7 +110,7 @@ const displayedTimelineEvents = [...timelineEvents].reverse();
                       href={`/events/${event.slug}/`}
                       class="ui-text text-sm font-medium text-[color-mix(in_srgb,var(--accent-dark)_70%,transparent)] underline decoration-1 underline-offset-[0.2em] transition hover:text-(--accent-dark)"
                     >
-                      Full story
+                      詳細を読む
                     </a>
                   </p>
                   <div class="timeline-sources mt-5 flex flex-wrap gap-2">
@@ -131,7 +131,7 @@ const displayedTimelineEvents = [...timelineEvents].reverse();
                           aria-hidden="true"
                         />
                         <span class="truncate">{source.title}</span>
-                        <span class="sr-only">opens in a new tab</span>
+                        <span class="sr-only">新しいタブで開く</span>
                       </a>
                     ))}
                   </div>
@@ -172,7 +172,7 @@ const displayedTimelineEvents = [...timelineEvents].reverse();
     }
 
     orderToggle.setAttribute("data-order", order);
-    orderToggle.textContent = isNewest ? "Oldest first" : "Newest first";
+    orderToggle.textContent = isNewest ? "古い順に表示" : "新しい順に表示";
   };
 
   if (timeline && orderToggle) {

@@ -2,48 +2,48 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "march-outage",
-  deck: "A Pentagon-adjacent competitor exodus sent Claude to #1 on the App Store, and then sent it offline twice in 24 hours.",
+  deck: "ペンタゴン絡みの競合他社離れがClaudeをApp Store首位に押し上げた。そして24時間以内に2度、オフラインに陥らせた。",
   body: [
-    'On March 2, 2026, Claude went down globally. The disruption began around 11:49 UTC, taking out claude.ai, the mobile apps, and <code>Claude Code</code> and affecting authentication and frontend flows worldwide, while the core developer API stayed largely functional, according to <a href="https://tbreak.com/claude-ai-outage-march-2026-global/">Tbreak</a>. Anthropic acknowledged the problem on its status page roughly 17 minutes later, with the first "Investigating" notice identifying frontend and login system failures, per <a href="https://cybernews.com/news/claude-down-major-outage-worldwide/">Cybernews</a>. The incident hit Claude Opus 4.6, Claude Haiku 4.5, Claude Console, and Claude Code, producing failed requests, timeouts, and inconsistent responses across web, mobile, and some API methods, as <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-a-worldwide-outage/">BleepingComputer</a> reported. At its peak, more than 2,000 users had flagged problems on Downdetector, with hundreds more reports continuing through the day.',
-    'The surge was not a supply-chain issue. Anthropic cited "unprecedented demand" and said in a statement, <em>"Claude is back up and running across claude.ai and our apps. We\'re grateful to our users while the team works to match the incredible demand we\'ve seen for Claude in recent days,"</em> according to <a href="https://www.storyboard18.com/digital/claude-back-online-after-outage-as-anthropic-cites-unprecedented-demand-91162.htm">Storyboard18</a>. The demand came from the "#QuitGPT" movement: backlash over OpenAI\'s reported deal to deploy its models within US defense and Pentagon networks, a contract Anthropic reportedly refused, prompted a mass migration, and US ChatGPT uninstalls jumped roughly 295% day-over-day, the same report noted. A company that had just declined the military contract was rewarded with the traffic anyway.',
-    'The migration had charts to match. Claude reached #1 on the US Apple App Store for the first time on March 1, 2026, briefly surpassing ChatGPT, with US downloads rising 37% on February 28 and 51% on March 1, per <a href="https://lumichats.com/blog/quitgpt-chatgpt-boycott-pentagon-deal-complete-story-2026">LumiChats</a>. Anthropic also reported a roughly 60% increase in free active users and daily signups quadrupling. The celebration did not last: a second outage hit within 24 hours of the first, with <a href="https://x.com/ETtech/status/2028696457340223961">ETtech</a> reporting more than 4,000 users in the US and around 300 in India reporting problems, mostly with Claude chat, after the March 2 disruption already took Claude down across several regions.',
-    'This was not a regional blip. The outage spanned North America, Europe, Asia, and Africa, and <a href="https://tbreak.com/claude-ai-outage-march-2026-global/">Tbreak</a> noted Claude\'s reported uptime had been 99.36% over the previous 90 days before the incident. Anthropic\'s fixes on March 2 were not one-shot, either: status updates logged recurring issues at 18:07, 18:18, and 18:54 UTC before the disruption was contained, <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-a-worldwide-outage/">BleepingComputer</a> reported. <a href="https://www.bloomberg.com/news/articles/2026-03-02/anthropic-s-claude-chatbot-goes-down-for-thousands-of-users">Bloomberg</a> confirmed that same day that Claude was down for thousands of users amid the "unprecedented demand."',
-    'By June 2026, Anthropic\'s own status page showed a 90-day uptime of 98.85% for claude.ai, below 99%, with core surfaces hovering just above it: Claude API 99.2%, Claude Code 99.05%, Claude Console 99.33%, and Claude Cowork 99.49%, per <a href="https://status.claude.com/">status.claude.com</a>. The reliability issues kept coming through March 2026, with logged outages on March 19, 21, 22, and 23, and two separate disruptions on March 25: a 3 hour 35 minute Opus 4.6 elevated-errors event and a 4 hour 12 minute API/Cowork outage, according to <a href="https://statusgator.com/services/claude/outage-history">StatusGator</a>. A product famous for refusing the Pentagon contract spent the rest of the month proving it could not quite handle the civilians, either.',
+    '2026年3月2日、Claudeは世界的にダウンした。混乱はおよそ11:49 UTC頃に始まり、claude.ai、モバイルアプリ、<code>Claude Code</code>が使えなくなり、認証とフロントエンドフローが世界的に影響を受けた。一方、コア開発者APIはおおむね機能していたと<a href="https://tbreak.com/claude-ai-outage-march-2026-global/">Tbreak</a>は伝えている。Anthropicは約17分後にステータスページで問題を認め、最初の「調査中」通知はフロントエンドとログインシステムの障害を特定したと<a href="https://cybernews.com/news/claude-down-major-outage-worldwide/">Cybernews</a>は報じた。この事件はClaude Opus 4.6、Claude Haiku 4.5、Claude Console、Claude Codeに影響し、web、モバイル、一部のAPIメソッドでリクエスト失敗、タイムアウト、応答の不整合を生じたと<a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-a-worldwide-outage/">BleepingComputer</a>は報じた。ピーク時、Downdetectorで2,000人以上が問題を報告し、その日を通じてさらに数百件の報告が続いた。',
+    'この急増はサプライチェーンの問題ではなかった。Anthropicは「前例のない需要」を理由に挙げ、<em>「Claudeはclaude.aiとアプリで再び稼働しています。最近Claudeに見てきた信じられない需要に追いつくようチームが取り組んでいる間、ユーザーに感謝します」</em>と声明を出したと<a href="https://www.storyboard18.com/digital/claude-back-online-after-outage-as-anthropic-cites-unprecedented-demand-91162.htm">Storyboard18</a>は伝えている。需要は「#QuitGPT」ムーブメントから来た。OpenAIが米国防・ペンタゴンネットワーク内にモデルを展開する契約を結んだことへの反発で、Anthropicはその契約を拒否したと報じられていたが、大量移動が起こり、米国でのChatGPTアンインストール数は前日比で約295%急増したと同報道は述べた。軍事契約を拒否したばかりの企業に、それでもトラフィックが流れ込んできた。',
+    '移動は数字にも表れた。Claudeは2026年3月1日に初めて米国Apple App Storeで首位に立ち、一時ChatGPTを上回った。米国ダウンロード数は2月28日に37%増、3月1日に51%増となったと<a href="https://lumichats.com/blog/quitgpt-chatgpt-boycott-pentagon-deal-complete-story-2026">LumiChats</a>は伝えている。Anthropicは無料アクティブユーザーが約60%増、毎日の新規登録が4倍になったと報告した。祝杯は長くは続かなかった。最初の障害から24時間以内に2度目の障害が発生し、<a href="https://x.com/ETtech/status/2028696457340223961">ETtech</a>は、米国で4,000人以上、インドで約300人が問題を報告したと伝えた。多くはClaudeチャットに関するもので、3月2日の最初の混乱ですでに複数地域でClaudeがダウンした後だった。',
+    'これは地域的な小さな障害ではなかった。障害は北米、ヨーロッパ、アジア、アフリカにまたがり、<a href="https://tbreak.com/claude-ai-outage-march-2026-global/">Tbreak</a>は、事件前の90日間のClaudeの稼働率は99.36%だったと指摘した。Anthropicの3月2日の修正は一発ではなかった。ステータス更新は18:07、18:18、18:54 UTCに再発する問題を記録した後、混乱が封じ込められたと<a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-in-a-worldwide-outage/">BleepingComputer</a>は報じた。<a href="https://www.bloomberg.com/news/articles/2026-03-02/anthropic-s-claude-chatbot-goes-down-for-thousands-of-users">Bloomberg</a>も同日、Claudeが「前例のない需要」の中で数千ユーザーに対してダウンしていると確認した。',
+    '2026年6月までに、Anthropic自身のステータスページはclaude.aiの90日稼働率を98.85%、つまり99%未満と示し、コアサーフェスもそれをうかがっていた：Claude API 99.2%、Claude Code 99.05%、Claude Console 99.33%、Claude Cowork 99.49%と、<a href="https://status.claude.com/">status.claude.com</a>によれば、わずかに上回っているにすぎない。信頼性問題は2026年3月中も続き、3月19、21、22、23日に障害が記録され、3月25日には2件の別個の障害があった。Opus 4.6のエラー増加は3時間35分、API/Coworkの障害は4時間12分続いたと<a href="https://statusgator.com/services/claude/outage-history">StatusGator</a>は記録している。ペンタゴンの契約を拒否したことで有名な製品は、その月の残りを、民間人を相手にするのもやっぱり少し苦手だと証明するのに費やした。',
   ],
   receipts: [
-    'Disruption began around 11:49 UTC on March 2, 2026; Anthropic posted its first "Investigating" notice roughly 17 minutes later.',
-    "More than 2,000 users reported problems on Downdetector at the peak.",
-    'Anthropic cited "unprecedented demand" after traffic driven by the "#QuitGPT" backlash; US ChatGPT uninstalls rose roughly 295% day-over-day.',
-    "Claude hit #1 on the US Apple App Store on March 1, 2026, with daily signups quadrupling.",
-    "A second outage within 24 hours produced over 4,000 US reports and around 300 in India.",
-    "By June 2026, status.claude.com showed claude.ai at 98.85% 90-day uptime, below 99%.",
+    "2026年3月2日11:49 UTC頃に混乱が始まり、Anthropicは約17分後に最初の「調査中」通知を投稿した。",
+    "ピーク時、Downdetectorで2,000人以上が問題を報告した。",
+    "Anthropicは、「#QuitGPT」反発に牽引されたトラフィックに続き「前例のない需要」を理由に挙げた。米国でのChatGPTアンインストール数は前日比で約295%増加した。",
+    "2026年3月1日、Claudeは米国Apple App Storeで首位になり、毎日の新規登録が4倍になった。",
+    "24時間以内の2度目の障害により、米国で4,000件以上、インドで約300件の報告が寄せられた。",
+    "2026年6月までに、status.claude.comはclaude.aiの90日稼働率が98.85%、つまり99%未満であることを示した。",
   ],
   reactions: [
     {
       platform: "x",
       author: "@ETtech",
-      meta: "Economic Times tech account",
+      meta: "Economic Timesのテックアカウント",
       quote:
-        "Claude down: Second outage in 24 hours, affects users across regions. Over 4,000 US users and around 300 in India reported problems, mostly with Claude chat. During the first outage on March 2, the chatbot went down across several regions from around 5-8 pm.",
+        "Claudeダウン：24時間以内の2度目の障害、複数地域のユーザーに影響。米国で4,000人以上、インドで約300人が問題を報告した。多くはClaudeチャットに関するもの。3月2日の最初の障害では、午後5時から8時頃にかけて複数地域でチャットボットがダウンした。",
       url: "https://x.com/ETtech/status/2028696457340223961",
     },
     {
       platform: "x",
       author: "@pressenterprise",
       meta: "The Press-Enterprise",
-      quote: "Anthropic's chatbot Claude goes down amid 'unprecedented demand'",
+      quote: "AnthropicのチャットボットClaude、「前例のない需要」の中でダウン",
       url: "https://x.com/pressenterprise/status/2028551806725312723",
     },
     {
       platform: "other",
       author: "Jim Manzon (Medium)",
-      meta: "Medium writeup paraphrasing an affected user",
+      meta: "影響を受けたユーザーの言葉を要約したMediumの記事",
       quote:
-        "Claude's instability had stalled their work multiple times, forcing them to rethink dependency on a single AI provider.",
+        "Claudeの不安定さが何度も作業を停滞させ、単一のAIプロバイダへの依存を見直すことを余儀なくさせた。",
       url: "https://medium.com/@manzonjj/why-claude-keeps-crashing-unprecedented-demand-fragile-infrastructure-and-a-second-outage-in-24-50a64469e869",
     },
   ],
   images: [],
   aftermath:
-    "As of June 2026, Anthropic's status page still lists claude.ai at 98.85% ninety-day uptime, below the 99% threshold it had previously cleared, while the string of March incidents suggests the demand spike left the service underprovisioned well beyond the initial weekend.",
+    "2026年6月時点で、Anthropicのステータスページはclaude.aiの90日稼働率を依然として98.85%と記載しており、これは以前達成していた99%のしきい値を下回っている。3月の一連の障害は、需要の急増が最初の週末をはるかに超えてサービスの供給不足を引き起こしたことを示唆している。",
 };

@@ -2,89 +2,89 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "september-postmortem",
-  deck: "Anthropic published a postmortem on September 17, 2025, explaining that three overlapping infrastructure bugs had degraded Claude response quality for weeks, after users spent August and early September asking why their model had gotten worse.",
+  deck: "Anthropicは2025年9月17日、3つの重なったインフラバグが数週間にわたってClaudeの応答品質を低下させていたと説明する事後分析を公開した。8月から9月初めにかけて、ユーザーたちは自分たちのモデルがなぜ悪くなったのかと問い続けていた。",
   body: [
-    'On September 17, 2025, Anthropic published an engineering blog postmortem titled <a href="https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues">"A postmortem of three recent issues,"</a> authored by Sam McAllister. The post explained that three separate infrastructure bugs had intermittently degraded Claude response quality from August into early September 2025. The admission arrived after weeks of public complaints, including a <a href="https://ilikekillnerds.com/2025/09/09/anthropic-finally-admits-claude-quality-degradation/">September 9 critique</a> noting that Claude Code had "fell off a cliff" for weeks while the company stayed "radio silent" and its subreddits filled with "I\'m cancelling" threads.',
-    'Bug 1 was a context-window routing error beginning August 5. Short-context Sonnet 4 requests were misrouted to servers configured for the 1M-token context window. It initially affected 0.8% of requests, but an August 29 load-balancing change escalated impact to as much as 16% of Sonnet 4 requests at peak on August 31. Because of "sticky routing," once a user\'s request hit the wrong server pool, follow-up requests stayed on the same broken servers, making the degradation feel deliberately targeted. About 30% of Claude Code users who made a request during the window had at least one misrouted message.',
-    "Bug 2, deployed August 25, was an output-corruption issue from a TPU server misconfiguration. During token generation it assigned incorrect high probabilities to wrong tokens, producing symptoms like Thai or Chinese characters appearing in English responses and obvious syntax errors in code. It affected Opus 4.1 and Opus 4 from August 25 to 28 and Sonnet 4 from August 25 to September 2, and was rolled back September 2. Bug 3 was a latent XLA:TPU compiler miscompilation, an approximate top-k bug triggered August 25 by a token-selection code change, rooted in a mixed-precision mismatch between <code>bf16</code> and <code>fp32</code>. It affected Claude Haiku 3.5 and likely some Sonnet 4 and Opus 3 requests; fixes rolled out September 4 for Haiku and September 12 for Opus.",
-    'Third-party platforms were far less affected. At peak, the routing bug hit about 0.18% of Sonnet 4 requests on Amazon Bedrock and under 0.0004% on Google Vertex AI. The output-corruption bug did not affect third-party platforms at all. The serving complexity stemmed from running across three hardware platforms — AWS Trainium, NVIDIA GPUs, and Google TPUs — each needing specific optimizations, with Python and JAX in the serving layer. Overlapping bugs produced what <a href="https://simonwillison.net/2025/Sep/17/anthropic-postmortem/">independent coverage</a> summarized as a "confusing mix of reports that didn\'t point to any single cause."',
-    'Anthropic admitted its evaluations missed the problem, writing: <em>"The evaluations we ran simply didn\'t capture the degradation users were reporting, in part because Claude often recovers well from isolated mistakes."</em> The company also said its own privacy and security controls slowed debugging: <em>"Our internal privacy and security controls limit how and when engineers can access user interactions with Claude, in particular when those interactions are not reported to us as feedback."</em> It explicitly denied throttling quality by load, stating: <em>"To state it plainly: We never reduce model quality due to demand, time of day, or server load."</em> And it conceded: <em>"We recognize users expect consistent quality from Claude, and we maintain an extremely high bar for ensuring infrastructure changes don\'t affect model outputs. In these recent incidents, we didn\'t meet that bar."</em>',
-    'Going forward, Anthropic said it would adopt more sensitive evaluations, continuous production quality monitoring, and faster debugging tooling, and asked users to send feedback via the <code>/bug</code> command or thumbs-down buttons. The postmortem reached the front page of <a href="https://news.ycombinator.com/item?id=45281139">Hacker News</a> as story 45281139, accumulating roughly 381 points and 116 comments, with debate split between praise for the transparency and frustration over the lack of user credits.',
+    '2025年9月17日、AnthropicはSam McAllister執筆のエンジニアリング事後分析<a href="https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues">「A postmortem of three recent issues」</a>を公開した。この投稿は、2025年8月から9月初めにかけて、3つの別々のインフラバグが断続的にClaudeの応答品質を低下させていたと説明した。この認めたことは、数週間にわたる公の不満の後にやってきた。中には、<a href="https://ilikekillnerds.com/2025/09/09/anthropic-finally-admits-claude-quality-degradation/">9月9日の批判</a>もあり、Claude Codeが数週間にわたって「崖から落ちた」にもかかわらず、同社は「無線沈黙」を保ち、自社のsubredditは「解約する」スレッドで溢れていたと指摘していた。',
+    'バグ1は8月5日に始まったコンテキストウィンドウのルーティングエラーだった。短いコンテキスト向けのSonnet 4リクエストが、100万トークンコンテキストウィンドウ用に設定されたサーバーに誤って振り分けられた。当初はリクエストの0.8%に影響したが、8月29日の負荷分散変更により、8月31日のピーク時にはSonnet 4リクエストの最大16%にまで影響が拡大した。「スティッキールーティング」のため、一度誤ったサーバープールに振り分けられたユーザーの後続リクエストは同じ壊れたサーバーに留まり、品質低下が意図的に標的にされているかのように感じられた。ウィンドウ中にリクエストをしたClaude Codeユーザーの約30%は、少なくとも1回は誤振分されたメッセージを受け取った。',
+    "バグ2は8月25日に展開されたTPUサーバーの設定ミスによる出力破損問題だった。トークン生成中に誤ったトークンに高い確率を割り当て、英語の応答にタイ語や中国語の文字が現れたり、コードに明らかな構文エラーが生じたりする症状をもたらした。8月25日から28日までOpus 4.1とOpus 4に、8月25日から9月2日までSonnet 4に影響し、9月2日にロールバックされた。バグ3は潜在的なXLA:TPUコンパイラの誤コンパイルであり、8月25日のトークン選択コード変更によって引き起こされた近似top-kバグで、根本原因は<code>bf16</code>と<code>fp32</code>の混合精度ミスマッチにあった。Claude Haiku 3.5と、おそらく一部のSonnet 4およびOpus 3リクエストに影響し、Haiku向け修正は9月4日、Opus向け修正は9月12日に展開された。",
+    'サードパーティープラットフォームへの影響ははるかに小さかった。ルーティングバグは、ピーク時でもAmazon Bedrock上のSonnet 4リクエストの約0.18%、Google Vertex AI上では0.0004%未満にとどまった。出力破損バグはサードパーティープラットフォームにはまったく影響しなかった。提供の複雑さは、AWS Trainium、NVIDIA GPU、Google TPUの3つのハードウェアプラットフォームにまたがって動作し、提供層ではPythonとJAXを使っていることに由来する。重なったバグは、<a href="https://simonwillison.net/2025/Sep/17/anthropic-postmortem/">独立した報道</a>が「単一の原因を指し示さない、混乱した報告の混ざり合い」と要約したような状況を生み出した。',
+    'Anthropicは自社の評価が問題を見逃したことを認めた。<em>「私たちが実行した評価は、ユーザーが報告していた品質低下を単純に捉えきれていなかった。一部は、Claudeが孤立したミスからしばしばうまく回復するためだ。」</em>同社はまた、プライバシーとセキュリティ管理がデバッグを遅らせたとも述べた。<em>「社内のプライバシーとセキュリティ管理は、エンジニアがClaudeとのユーザー対話にアクセスできる方法やタイミングを制限しており、特にフィードバックとして報告されていない対話ではそうだ。」</em>需要や時間帯、サーバー負荷によって品質を落とすことはないと明言した。<em>「はっきり言おう。私たちは需要、時間帯、サーバー負荷によってモデルの品質を下げることは決してない。」</em>そしてこう認めた。<em>「ユーザーはClaudeから一貫した品質を期待していることを認識している。インフラ変更がモデル出力に影響を与えないよう、私たちは極めて高い基準を維持している。最近のこれらのインシデントでは、その基準を満たせなかった。」</em>',
+    '今後、Anthropicはより敏感な評価、継続的な本番品質モニタリング、より高速なデバッグツールを導入すると述べ、ユーザーには<code>/bug</code>コマンドや親指を下に向けるボタンでフィードバックを送るよう求めた。事後分析は<a href="https://news.ycombinator.com/item?id=45281139">Hacker News</a>のトップページに掲載され、ストーリー45281139としておおよそ381ポイントと116件のコメントを集めた。議論は透明性を称賛する声と、クレジット提供の欠如への不満とで分かれた。',
   ],
   receipts: [
-    "16% of Sonnet 4 requests degraded at peak on August 31, up from 0.8% when the routing bug began on August 5.",
-    "About 30% of Claude Code users who made a request during the window got at least one misrouted message.",
-    "On Google Vertex AI the routing bug peaked at under 0.0004% of Sonnet 4 requests; on Amazon Bedrock, about 0.18%.",
-    "Symptoms included Thai or Chinese characters appearing in English responses and syntax errors in code.",
-    "Bug 3 was a mixed-precision mismatch between bf16 and fp32; Haiku fixes shipped September 4, Opus fixes September 12.",
-    "The postmortem landed September 17, after degradation that began August 5.",
+    "8月31日のピーク時、Sonnet 4リクエストの16%に影響が拡大した。ルーティングバグ開始時の8月5日は0.8%だった。",
+    "ウィンドウ中にリクエストをしたClaude Codeユーザーの約30%は、少なくとも1回は誤振分されたメッセージを受け取った。",
+    "Google Vertex AIではルーティングバグがピーク時でもSonnet 4リクエストの0.0004%未満、Amazon Bedrockでは約0.18%にとどまった。",
+    "症状には、英語の応答にタイ語や中国語の文字が現れたり、コードに構文エラーが生じたりすることが含まれた。",
+    "バグ3はbf16とfp32の混合精度ミスマッチであり、Haiku修正は9月4日、Opus修正は9月12日に出荷された。",
+    "事後分析は9月17日に公開され、品質低下は8月5日に始まっていた。",
   ],
   reactions: [
     {
       platform: "hackernews",
       author: "flutas",
-      meta: "comment on the postmortem HN thread (45281139, ~381 points)",
+      meta: "事後分析HNスレッド（45281139、約381ポイント）へのコメント",
       quote:
-        "And yet no offers of credits to make things right for the users, for what was essentially degraded performance of what you paid for. I know I'll probably get push back on this, but it left a sour taste in my mouth when I paid for a $200 sub that felt like it was less useful than ChatGPT Plus ($20) at times.",
+        "それでも、ユーザーに対して謝罪のクレジット提供はない。結局、支払った対価に対して性能が劣化していたのだから。反論があるだろうことはわかっているが、200ドルも払っているのに、時々ChatGPT Plus（20ドル）より役に立たないと感じたのは嫌な味が残った。",
       url: "https://news.ycombinator.com/item?id=45281869",
     },
     {
       platform: "hackernews",
       author: "blackqueeriroh",
-      meta: "reply in the postmortem HN thread",
+      meta: "事後分析HNスレッドへの返信",
       quote:
-        "I'm pretty certain if you check the ToS that Anthropic doesn't guarantee a level of response quality, and explicitly even says there is zero guarantee, even for paid plans.",
+        "利用規約を確認すれば、Anthropicは応答品質を保証しておらず、有料プランであっても全く保証しないと明記されているはずだ。",
       url: "https://news.ycombinator.com/item?id=45281869",
     },
     {
       platform: "hackernews",
       author: "deepdarkforest",
-      meta: "comment on the postmortem HN thread",
+      meta: "事後分析HNスレッドへのコメント",
       quote:
-        "Their post mortem is basically 'evaluations are hard, we relied on vibe checking, now we are going to have even more frequent vibe checking'.",
+        "彼らの事後分析は基本的に『評価は難しい、私たちは雰囲気チェックに頼っていた、これからさらに頻繁に雰囲気チェックをする』ということだ。",
       url: "https://news.ycombinator.com/item?id=45281139",
     },
     {
       platform: "news",
       author: "ilikekillnerds (Dwayne Charrington)",
-      meta: "blog post, Sep 9, 2025 (written before the official postmortem)",
+      meta: "2025年9月9日のブログ投稿（公式事後分析の前に書かれた）",
       quote:
-        "Anthropic were radio silent while their own subreddits filled with 'I'm cancelling' threads... For a company valued in the hundreds of billions, this is amateur hour.",
+        "Anthropicは自分たちのsubredditが『解約する』スレッドで溢れている間、無線沈黙を保っていた。数百億ドル評価の企業にしては、これは素人の時間帯だ。",
       url: "https://ilikekillnerds.com/2025/09/09/anthropic-finally-admits-claude-quality-degradation/",
     },
     {
       platform: "other",
       author: "Simon Willison",
-      meta: "blog commentary, Sep 17, 2025",
+      meta: "2025年9月17日のブログ解説",
       quote:
-        "I'm really glad Anthropic are publishing this in so much detail. Their reputation for serving their models reliably has taken a notable hit.",
+        "Anthropicがこれほど詳細に公開していることは本当にうれしい。彼らのモデルを安定して提供するという評判は、かなり傷ついている。",
       url: "https://simonwillison.net/2025/Sep/17/anthropic-postmortem/",
     },
   ],
   images: [
     {
       src: "/events/september-postmortem/timeline.png",
-      alt: "Anthropic timeline chart showing the three Claude infrastructure bugs being detected, worsening, and getting fixed across August and September 2025",
+      alt: "2025年8月から9月にかけて3つのClaudeインフラバグが検出され、悪化し、修正される様子を示すAnthropicのタイムラインチャート",
       caption:
-        "Anthropic's official timeline color-coding when each of the three issues was detected, worsened, and fixed across August-September 2025. Source: Anthropic.",
+        "2025年8月から9月にかけて、3つの問題それぞれが検出され、悪化し、修正された時期を色分けしたAnthropic公式タイムライン。Source: Anthropic。",
       sourceUrl: "https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues",
       width: 3840,
       height: 1800,
     },
     {
       src: "/events/september-postmortem/topk-reproducer.png",
-      alt: "Code reproducer image from Anthropic's postmortem showing the approximate top-k compiler bug",
+      alt: "Anthropicの事後分析からのコード再現例。近似top-kコンパイラバグを示している",
       caption:
-        "A code reproducer from the postmortem illustrating the approximate top-k XLA:TPU compiler bug that returned wrong token candidates. Source: Anthropic.",
+        "事後分析に掲載されたコード再現例。誤ったトークン候補を返した近似top-k XLA:TPUコンパイラバグを示している。Source: Anthropic。",
       sourceUrl: "https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues",
       width: 2400,
       height: 1404,
     },
     {
       src: "/events/september-postmortem/routing-impact-chart.png",
-      alt: "Chart showing Claude Sonnet 4 routing bug impact peaking near 16 percent of requests",
+      alt: "Claude Sonnet 4のルーティングバグの影響がリクエストの約16%に達したピークを示すチャート",
       caption:
-        "Implicator.ai's chart of the routing-bug impact ramping to as much as 16% of Sonnet 4 requests at peak. Source: Implicator.ai.",
+        "Implicator.aiのチャート。ルーティングバグの影響がSonnet 4リクエストの最大16%にまで拡大した様子。Source: Implicator.ai。",
       sourceUrl:
         "https://www.implicator.ai/anthropics-postmortem-three-bugs-pushed-claude-degradation-to-16-at-peak/",
       width: 1856,
@@ -92,5 +92,5 @@ export const detail: EventDetail = {
     },
   ],
   aftermath:
-    "The postmortem struck some readers as unusually transparent and left others stuck on the weeks of silence and the absence of any credits; the named detection mechanism going forward is more sensitive evaluations, continuous monitoring, and users hitting the thumbs-down button when their paid model starts answering in Thai.",
+    "この事後分析は、一部の読者には異例の透明性があると映り、他の読者は数週間の沈黙とクレジットの不在に釘づけにされた。今後の検出メカニズムとして挙げられたのは、より敏感な評価、継続的な監視、そして有料モデルがタイ語で答え始めたときに親指を下に向けるユーザーたちである。",
 };

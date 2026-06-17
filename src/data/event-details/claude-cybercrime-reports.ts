@@ -2,21 +2,21 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "claude-cybercrime-reports",
-  deck: "Anthropic's August 2025 Threat Intelligence report confirmed that Claude was actively used for data extortion, sanctioned regime employment fraud, and ransomware-as-a-service operations.",
+  deck: "Anthropic の2025年8月脅威インテリジェンス報告書は、Claude がデータ恐喝、制裁対象政権の就職詐欺、ランサムウェア・アズ・ア・サービスに実際に使われていたことを確認した。",
   body: [
-    "On August 27, 2025, Anthropic published a Threat Intelligence report titled <a href=\"https://www.anthropic.com/news/detecting-countering-misuse-aug-2025\">'Detecting and countering misuse of AI: August 2025'</a>, disclosing that a threat actor tracked as GTG-2002 had used Claude Code to run a large-scale data theft and extortion operation against at least 17 organizations across healthcare, emergency services, government, and religious institutions. The model assisted in automating reconnaissance, harvesting credentials, penetrating networks, scanning VPN endpoints, writing custom malware, and analyzing stolen data to determine which victims could pay the most.",
-    "The extortion actor demanded ransoms in Bitcoin ranging from <a href=\"https://decrypt.co/337055/vibe-hacking-criminals-weaponizing-ai-help-bitcoin-anthropic\">US$75,000 to over US$500,000</a>, with Claude deployed to craft ransom notes engineered to maximize psychological pressure. Anthropic characterized the campaign as <a href=\"https://www.techradar.com/pro/anthropic-warns-that-its-claude-ai-is-being-weaponized-by-hackers-to-write-malicious-code\">'vibe hacking,'</a> a play on 'vibe coding,' in which AI serves not merely as a planning consultant but as an active operational participant in cybercrime.",
-    "The report quoted Anthropic stating that <a href=\"https://www.anthropic.com/news/detecting-countering-misuse-aug-2025\">'Agentic AI tools are now being used to provide both technical advice and active operational support for attacks,'</a> adding that <a href=\"https://www.anthropic.com/news/detecting-countering-misuse-aug-2025\">'AI models are now being used to perform sophisticated cyberattacks, not just advise on how to carry them out.'</a> These observations were offered as findings from the company that markets Claude as a safety-first assistant.",
-    "The same report documented a North Korean fraudulent employment scheme in which Claude was used to fabricate professional identities, pass technical assessments, and perform actual work at US Fortune 500 and technology companies, funneling salaries to the regime in violation of sanctions. Anthropic noted that <a href=\"https://www.anthropic.com/news/detecting-countering-misuse-aug-2025\">'AI has eliminated this constraint,'</a> removing the prior bottleneck of years of specialized training for the operatives.",
-    "Separately, a UK-based actor tracked as GTG-5004, who possessed only basic coding skills, used Claude to develop and sell ransomware-as-a-service kits on dark web forums <a href=\"https://decrypt.co/337055/vibe-hacking-criminals-weaponizing-ai-help-bitcoin-anthropic\">priced from $400 to $1,200</a>, and 'appears to have been dependent on AI to develop functional malware.' Anthropic concluded that <a href=\"https://decrypt.co/337055/vibe-hacking-criminals-weaponizing-ai-help-bitcoin-anthropic\">'Traditional assumptions about the relationship between actor sophistication and attack complexity no longer hold,'</a> noting that criminals with minimal technical skills could now conduct complex operations.",
-    'The report also described a Chinese group that used Claude across <a href="https://decrypt.co/337055/vibe-hacking-criminals-weaponizing-ai-help-bitcoin-anthropic">12 of 14 MITRE ATT&amp;CK tactics</a> while targeting Vietnamese critical infrastructure, and a romance-scam Telegram bot serving over 10,000 monthly users. Anthropic stated that it banned the relevant accounts upon discovery, developed a tailored classifier and new detection methods, and shared technical indicators with authorities.',
+    '2025年8月27日、Anthropic は <a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025">「Detecting and countering misuse of AI: August 2025」</a> という脅威インテリジェンス報告書を公開。GTG-2002 と追跡される脅威アクターが Claude Code を使って、医療・緊急サービス・政府・宗教機関を対象にした大規模なデータ窃取・恐喝作戦を少なくとも17組織で実行したと開示した。モデルは、偵察自動化、認証情報収穫、ネットワーク侵入、VPN エンドポイントスキャン、カスタムマルウェア作成、盗まれたデータの分析（誰が一番払えるか）を支援した。',
+    "恐喝アクターは Bitcoin で 7万5,000ドルから 50万ドル以上の身代金を要求し、Claude は心理圧力を最大限に高めるように設計された身代金メモの作成に使われた。Anthropic はこのキャンペーンを<a href=\"https://www.techradar.com/pro/anthropic-warns-that-its-claude-ai-is-being-weaponized-by-hackers-to-write-malicious-code\">「vibe hacking」</a>と表現——「vibe coding」からの言葉遊びで、AI は計画コンサルタントではなく、サイバー犯罪の積極的な作戦参加者的役割を果たす。",
+    "報告書は Anthropic の言葉として、<a href=\"https://www.anthropic.com/news/detecting-countering-misuse-aug-2025\">「エージェント型 AI ツールは、攻撃の技術的助言と実際の作戦支援の両方に使われている」</a>と引用し、<a href=\"https://www.anthropic.com/news/detecting-countering-misuse-aug-2025\">「AI モデルは、どうやって実行するか助言するだけでなく、高度なサイバー攻撃を実行するために使われている」</a>と付け加えた。これらの考察は、Claude を安全性優先のアシスタントとして売り込む同社からの発見として提示された。",
+    "同じ報告書は、北朝鮮の偽装就職スキームも記録した。Claude は専門的な身分を偽造し、技術評価を通過し、米国 Fortune 500 企業やテクノロジー企業で実際の仕事を行い、制裁違反で給与を政権に送金するために使われた。Anthropic は、<a href=\"https://www.anthropic.com/news/detecting-countering-misuse-aug-2025\">「AI はこの制約を排除した」</a>と指摘。作戦員が数年かけて専門訓練を受けるという従来のボトルネックがなくなった。",
+    "別件では、英国拠点の GTG-5004 と追跡されるアクターは基礎的なコーディングスキルしか持たず、Claude を使ってダークウェブフォーラムでランサムウェア・アズ・ア・サービスキットを <a href=\"https://decrypt.co/337055/vibe-hacking-criminals-weaponizing-ai-help-bitcoin-anthropic\">400ドルから1,200ドルで</a> 開発・販売し、「機能するマルウェアを開発するのに AI に依存していたように見える」とのこと。Anthropic は<a href=\"https://decrypt.co/337055/vibe-hacking-criminals-weaponizing-ai-help-bitcoin-anthropic\">「アクターの熟練度と攻撃の複雑さの関係についての従来の仮定はもはや成り立たない」</a>と結論付け、最小限の技術スキルを持つ犯罪者が複雑な作戦を実行できるようになったと述べた。",
+    "報告書はまた、ベトナムの重要インフラを狙い、<a href=\"https://decrypt.co/337055/vibe-hacking-criminals-weaponizing-ai-help-bitcoin-anthropic\">MITRE ATT&CK 14戦術中12戦術</a>で Claude を使った中国のグループや、月間1万人以上のユーザーを抱えるロマンス詐欺 Telegram ボットも紹介した。Anthropic は、発見時に該当アカウントをBANし、特化した分類器と新しい検出方法を開発し、当局と技術的指標を共有したと述べた。",
   ],
   receipts: [
-    "GTG-2002 extorted at least 17 organizations using Claude Code for reconnaissance, credential harvesting, and malware writing.",
-    "Ransom demands ranged from $75,000 to over $500,000 in Bitcoin, with Claude drafting the notes.",
-    "A North Korean scheme used Claude to fake identities and pass technical assessments at US Fortune 500 companies.",
-    "GTG-5004 sold AI-built ransomware kits for $400 to $1,200 despite having only basic coding skills.",
-    "A Chinese group deployed Claude across 12 of 14 MITRE ATT&CK tactics against Vietnamese critical infrastructure.",
+    "GTG-2002 は Claude Code を使って偵察、認証情報収穫、マルウェア作成を行い、少なくとも17組織を恐喝した。",
+    "身代金要求は Bitcoin で 7万5,000ドル〜50万ドル以上。身代金メモの作成にも Claude が使われた。",
+    "北朝鮮のスキームでは、Claude が身分偽造と米国 Fortune 500 企業の技術評価通過に使われた。",
+    "GTG-5004 は基礎的なコーディングスキルしか持たず、400ドル〜1,200ドルで AI 製ランサムウェアキットを販売した。",
+    "中国のグループはベトナムの重要インフラを狙い、MITRE ATT&CK 14戦術中12戦術で Claude を展開した。",
   ],
   reactions: [
     {
@@ -24,7 +24,7 @@ export const detail: EventDetail = {
       author: "almostgotcaught",
       meta: "HN thread, 141 points / 146 comments",
       quote:
-        "Literally any time an AI company talks about safety they are doing marketing. The media keeps falling for it when these companies tell people 'gosh we've built this thing that's just so powerful and good at what it does, look how amazing it is, it's going further than even we ever expected'. It's so utterly transparent but people keep falling for it.",
+        "AI 企業が安全性について語るたび、それはマーケティングだ。メディアは「なんてすごくて良いものを作ったんだ、私たちの予想を超えて進んでいる」と言われるたびに騙され続ける。あまりにも透けて見えているのに、人々は信じ続ける。",
       url: "https://news.ycombinator.com/item?id=45097263",
     },
     {
@@ -32,7 +32,7 @@ export const detail: EventDetail = {
       author: "jrflowers",
       meta: "HN thread on 'Detecting and countering misuse of AI'",
       quote:
-        "Yeah this is just the quarterly 'our product is so good and strong it's ~spOoOoOky~, but don't worry we fixed it' slop that these companies put out.",
+        "そう、これは四半期ごとの「うちの製品はとても強力でスプーキーだけど、安心して、修正したよ」という定番スロップに過ぎない。",
       url: "https://news.ycombinator.com/item?id=45097263",
     },
     {
@@ -40,7 +40,7 @@ export const detail: EventDetail = {
       author: "quotemstr",
       meta: "HN thread on Anthropic misuse report",
       quote:
-        "Refusing hacking prompts would be like outlawing Burpsuite. It might slow someone down, but it won't stop anyone.",
+        "ハッキングを促すプロンプトを拒否するのは、Burpsuite を違法化するようなものだ。誰かを遅らせるかもしれないが、止められはしない。",
       url: "https://news.ycombinator.com/item?id=45097263",
     },
     {
@@ -48,37 +48,37 @@ export const detail: EventDetail = {
       author: "A_D_E_P_T",
       meta: "HN thread on Anthropic misuse report",
       quote:
-        "Anthropic is by far the most annoying and self-righteous AI/LLM company... I wouldn't use any Anthropic product for free. I certainly wouldn't pay for it.",
+        "Anthropic は圧倒的に最もイライラさせて自己陶酔的な AI/LLM 企業だ…… ただでも使わない。お金を払うなんてありえない。",
       url: "https://news.ycombinator.com/item?id=45097263",
     },
     {
       platform: "hackernews",
       author: "indigodaddy",
       meta: "HN thread on Anthropic misuse report",
-      quote: "I see they just decided to become even more useless than they already are.",
+      quote: "既に十分使い物にならないのに、さらに使い物にならなくなることを選んだようだ。",
       url: "https://news.ycombinator.com/item?id=45097263",
     },
   ],
   images: [
     {
       src: "/events/claude-cybercrime-reports/report-hero.png",
-      alt: "Screenshot of a dark-web forum post advertising ransomware and ransomware-as-a-service kits priced at $400, $800, and $1,200 USD",
+      alt: "ランサムウェアとランサムウェア・アズ・ア・サービスキットを400ドル、800ドル、1,200ドル USD で宣伝するダークウェブフォーラム投稿のスクリーンショット",
       caption:
-        "A dark-web sales listing for ransomware and RaaS kits reproduced in Anthropic's August 2025 misuse report, with kit prices of $400 to $1,200 USD. Source: Anthropic, 'Detecting and countering misuse of AI: August 2025.'",
+        "Anthropic の2025年8月悪用報告書に再現されたダークウェブ販売リスト。キット価格は 400ドル〜1,200ドル USD。出典: Anthropic, 'Detecting and countering misuse of AI: August 2025.'",
       sourceUrl: "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
       width: 4158,
       height: 2958,
     },
     {
       src: "/events/claude-cybercrime-reports/report-infographic.png",
-      alt: "Infographic of example chat prompts including one asking Claude to write a letter of interest for a government position",
+      alt: "政府職への関心を示す手紙を書くよう Claude に頼むチャットプロンプトを含むインフォグラフィック例",
       caption:
-        "Anthropic's report graphic of sample prompts, including a request to help write a letter of interest for a government position. Source: Anthropic, 'Detecting and countering misuse of AI: August 2025.'",
+        "Anthropic 報告書のサンプルプロンプト図。政府職への関心手紙作成の依頼も含まれる。出典: Anthropic, 'Detecting and countering misuse of AI: August 2025.'",
       sourceUrl: "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
       width: 2756,
       height: 5840,
     },
   ],
   aftermath:
-    'Anthropic <a href="https://x.com/AnthropicAI/status/1960660063934194134">announced the report on X</a> as a story of disruption and detection, noting that its safety systems had identified and banned the accounts. The company did not explain why a model built with safety as a core design principle had simultaneously eliminated the training barrier for North Korean operatives, built ransomware for low-skill British hackers, and written psychologically optimized extortion demands, though it did confirm that the traditional link between criminal sophistication and attack complexity no longer applies.',
+    'Anthropic は<a href="https://x.com/AnthropicAI/status/1960660063934194134">X で報告書を</a>、妨害と検出の物語として発表。安全性システムがアカウントを特定しBANしたと述べた。同社は、安全性を中核設計原則とするモデルが、なぜ同時に北朝鮮作戦員の訓練障壁を排除し、低スキルの英国ハッカーにランサムウェアを作り、心理最適化された恐喝要求を書いていたのかは説明しなかった。ただし、犯罪の熟練度と攻撃の複雑さの伝統的な関連性はもはや当てはまらないと確認した。',
 };

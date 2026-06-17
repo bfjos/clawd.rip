@@ -12,9 +12,9 @@ interface Props {
   schema?: Record<string, unknown>;
 }
 
-const siteTitle = "Everything That Went Wrong With Claude";
+const siteTitle = "Claude で起きたやらかし大全";
 const siteDescription =
-  "A satirical timeline of Claude and Anthropic controversies, outages, bans, legal disputes, policy fights, and quality complaints.";
+  "Claude と Anthropic のもう騒動——障害、アカウント BAN、訴訟沙汰、政策バトル、品質クレームを時系列で突き合わせる、悪意しかない系譜図。";
 const siteUrl = Astro.site ?? new URL("https://clawd.rip");
 
 const title = Astro.props.title ?? siteTitle;
@@ -22,7 +22,7 @@ const description = Astro.props.description ?? siteDescription;
 const pageUrl = new URL(Astro.props.path ?? "/", siteUrl);
 const previewImage = new URL(Astro.props.image ?? "/og-image.png", siteUrl);
 const previewImageAlt =
-  Astro.props.imageAlt ?? "Clawd.rip hero: Everything that went wrong with Claude.";
+  Astro.props.imageAlt ?? "Clawd.rip ヒーロー画像: Claude で起きたやらかし大全。";
 const ogType = Astro.props.ogType ?? "website";
 
 const timelineSchema = {

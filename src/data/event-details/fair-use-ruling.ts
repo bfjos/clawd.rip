@@ -2,22 +2,22 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "fair-use-ruling",
-  deck: 'On June 23–24, 2025, Judge William Alsup ruled that training Claude on lawfully acquired books was "exceedingly transformative" fair use, while holding that pirating over seven million volumes to build a central library was "inherently, irredeemably infringing."',
+  deck: '2025年6月23〜24日、William Alsup 判事は、合法的に入手した本で Claude を学習させることは「圧倒的に変換的な」フェアユースだと判断。一方、700万冊以上の海賊版を集めて中央図書館を作ったことは「本質的に、取り返しのつかない侵害」とした。',
   body: [
-    'On June 23–24, 2025, U.S. District Judge William Alsup in the Northern District of California issued a summary judgment in <em>Bartz v. Anthropic</em> that split the difference between theory and practice. He held that using lawfully acquired books to train Claude and its precursors was fair use, while claims that Anthropic built a "central library" from pirated copies would proceed to trial. The named plaintiffs were Andrea Bartz, Charles Graeber, and Kirk Wallace Johnson. <a href="https://www.npr.org/2025/06/25/nx-s1-5445242/federal-rules-in-ai-companys-favor-in-landmark-copyright-infringement-lawsuit-authors-bartz-graeber-wallace-johnson-anthropic">NPR</a> and <a href="https://dc.fortune.com/2025/06/24/ai-training-is-fair-use-federal-judge-rules-anthropic-copyright-case">Fortune</a> reported the decision.',
-    'Alsup described AI training as "among the most transformative many of us will see in our lifetimes," calling the use of the books "quintessentially transformative," "exceedingly transformative," and "spectacularly so." He wrote that <em>"Like any reader aspiring to be a writer, Anthropic\'s LLMs trained upon works not to race ahead and replicate or supplant them — but to turn a hard corner and create something different."</em> The <a href="https://simonwillison.net/2025/Jun/24/anthropic-training/">Simon Willison</a> writeup captured the enthusiasm.',
-    'The praise stopped at the paywall. Before buying books, Anthropic downloaded over seven million pirated copies from shadow libraries such as LibGen and PiLiMi, paying nothing. Alsup wrote that <em>"pirating copies to build a research library without paying for it, and to retain copies should they prove useful for one thing or another, was its own use — and not a transformative one,"</em> finding piracy "inherently, irredeemably infringing." He added: <em>"That Anthropic later bought a copy of a book it earlier stole off the internet will not absolve it of liability for theft but it may affect the extent of statutory damages,"</em> and scheduled a trial on piracy liability and damages for December 1, 2025. <a href="https://www.boyarmiller.com/bartz-v-anthropic-a-split-decision-that-reshapes-ai-copyright-law/">BoyarMiller</a> analyzed the split.',
-    'Anthropic also argued that destructively scanning lawfully purchased physical books — effectively format conversion — was permissible, and the judge agreed, reasoning that requiring payment for each reading of a book "would be unthinkable." The fair-use endorsement marked the first U.S. judicial approval of the doctrine for AI training on books, though <a href="https://www.whitecase.com/insight-alert/two-california-district-judges-rule-using-books-train-ai-fair-use">White &amp; Case</a> noted that days later a separate California judge, Vince Chhabria, issued a parallel fair-use ruling in <em>Kadrey v. Meta</em>.',
-    'The Authors Guild called the ruling a mixed decision, stating <em>"It feels as though the court rushed to issue a decision without fully understanding the copyright law and legal issues or the potential harm,"</em> and predicted the fair-use findings <em>"will ultimately be reversed."</em> Their assessment appeared in the <a href="https://authorsguild.org/news/mixed-decision-in-anthropic-ai-case/">Authors Guild</a> reaction post.',
-    'The parties settled before the December trial. The case closed for $1.5 billion — among the largest copyright settlements ever — covering approximately 500,000 titles drawn from the roughly seven million copies downloaded from LibGen and PiLiMi, with a minimum award of about $3,000 per title before fees. The settlement followed mediation and was preliminarily approved by Judge Alsup on September 25, 2025; the default split was 50/50 between authors and publishers, with self-published and rights-reverted authors receiving 100%. The <a href="https://authorsguild.org/advocacy/artificial-intelligence/what-authors-need-to-know-about-the-anthropic-settlement/">Authors Guild</a> published an explainer on the payout structure.',
+    '2025年6月23〜24日、カリフォルニア州北部地区の William Alsup 連邦判事は <em>Bartz v. Anthropic</em> で中間判決を下し、理論と実践の間を割った。合法的に入手した本を使って Claude とその前身モデルを学習させることはフェアユースだが、Anthropic が海賊版コピーから「中央図書館」を構築したとする主張は裁判に進むものとした。原告は Andrea Bartz、Charles Graeber、Kirk Wallace Johnson。<a href="https://www.npr.org/2025/06/25/nx-s1-5445242/federal-rules-in-ai-companys-favor-in-landmark-copyright-infringement-lawsuit-authors-bartz-graeber-wallace-johnson-anthropic">NPR</a> と <a href="https://dc.fortune.com/2025/06/24/ai-training-is-fair-use-federal-judge-rules-anthropic-copyright-case">Fortune</a> が判決を報じた。',
+    'Alsup は AI 学習を「私たちの人生で最も変換的なものの一つ」と表現し、その本の使用を「変換的な典型」「圧倒的に変換的」「驚異的に変換的」と呼んだ。彼は<em>「作家になりたい読者と同じように、Anthropic の LLM は作品を競って複製したり置き換えたりするために学習したのではなく——困難な曲がり角を曲がり、何か違うものを作るために学習したのだ」</em>と書いた。<a href="https://simonwillison.net/2025/Jun/24/anthropic-training/">Simon Willison</a> の解説がこの熱意を捉えている。',
+    '称賛は、支払いの壁の前で止まった。本を購入する前に、Anthropic は LibGen や PiLiMi のようなシャドーライブラリから 700万冊以上の海賊版を無料でダウンロードした。Alsup は<em>「研究図書館を構築するために海賊版をダウンロードし、何かの役に立つかもしれないと保持することは、それ自体の利用であり——変換的なものではない」</em>と書き、海賊行為を「本質的に、取り返しのつかない侵害」と認定した。彼はさらに<em>「Anthropic が以前にインターネットから盗んだ本の正規版を後で購入したとしても、窃盗の責任を免除するものではないが、法定損害賠償の額には影響しうる」</em>と述べ、海賊行為の責任と損害賠償に関する裁判を 2025年12月1日に予定した。<a href="https://www.boyarmiller.com/bartz-v-anthropic-a-split-decision-that-reshapes-ai-copyright-law/">BoyarMiller</a> がこの分割判決を分析した。',
+    'Anthropic は、合法的に購入した物理書籍を破壊的にスキャンすること——実質的なフォーマット変換——は許容されると主張し、判事も同意した。本を読むたびに支払いを求めることは「考えられない」と推論した。フェアユースの支持は、米国司法において本を使った AI 学習に関する教義を初めて承認したものだが、<a href="https://www.whitecase.com/insight-alert/two-california-district-judges-rule-using-books-train-ai-fair-use">White & Case</a> は、数日後に別のカリフォルニア判事 Vince Chhabria が <em>Kadrey v. Meta</em> で同様のフェアユース判決を下したと指摘した。',
+    'Authors Guild はこの判決を混合的な決定と呼び、<em>「裁判所が著作権法や法的問題、潜在的な害を十分に理解せずに判決を急いだように感じる」</em>と述べ、フェアユースの判断は<em>「最終的に覆されるだろう」</em>と予測した。彼らの評価は <a href="https://authorsguild.org/news/mixed-decision-in-anthropic-ai-case/">Authors Guild</a> の反応投稿に掲載された。',
+    '当事者は12月の裁判前に和解した。事件は 15億ドル——史上最大級の著作権和解の一つ——で決着。LibGen と PiLiMi からダウンロードされた約700万冊のうち約50万タイトルをカバーし、手数料前の最低支払額はタイトルあたり約 3,000ドル。和解は調停を経て、2025年9月25日に Alsup 判事から仮承認された。デフォルトの分配は作者と出版社の 50/50 で、自費出版・権利戻り作者には 100%が支払われた。<a href="https://authorsguild.org/advocacy/artificial-intelligence/what-authors-need-to-know-about-the-anthropic-settlement/">Authors Guild</a> が支払い構造の解説を公開した。',
   ],
   receipts: [
-    'Judge Alsup described AI training as "among the most transformative many of us will see in our lifetimes."',
-    "Anthropic downloaded over seven million pirated copies from LibGen and PiLiMi before purchasing any books.",
-    "The trial on piracy liability was scheduled for December 1, 2025; the parties settled before it began.",
-    "The settlement was $1.5 billion for roughly 500,000 titles, yielding a minimum of about $3,000 per title before fees.",
-    "Preliminary approval came on September 25, 2025, with a default 50/50 split between authors and publishers.",
-    "Days later, Judge Vince Chhabria issued a parallel fair-use ruling in Kadrey v. Meta.",
+    'Alsup 判事は AI 学習を「私たちの人生で最も変換的なものの一つ」と表現した。',
+    "Anthropic は本を購入する前に、LibGen と PiLiMi から 700万冊以上の海賊版をダウンロードした。",
+    "海賊行為の責任に関する裁判は 2025年12月1日に予定されたが、当事者は裁判前に和解した。",
+    "和解額は 15億ドルで、約 50万タイトルをカバー。手数料前の最低額はタイトルあたり約 3,000ドル。",
+    "仮承認は 2025年9月25日。デフォルトの分配は作者と出版社の 50/50。",
+    "数日後、Vince Chhabria 判事は <em>Kadrey v. Meta</em> で同様のフェアユース判決を下した。",
   ],
   reactions: [
     {
@@ -25,7 +25,7 @@ export const detail: EventDetail = {
       author: "pseufaux",
       meta: "HN thread on the Anthropic ruling, item 44381639",
       quote:
-        "I personally think the illegal status of current models should be pretty clear simply based of the pirated nature of their input material. To my understanding, fair use has never before applied to works that were obtained illegally.",
+        "私個人としては、入力素材の海賊版的性質だけで、現在のモデルの違法状態はかなり明確だと思う。私の知る限り、フェアユースは違法に入手された作品にはこれまで適用されたことがない。",
       url: "https://news.ycombinator.com/item?id=44381639",
     },
     {
@@ -33,7 +33,7 @@ export const detail: EventDetail = {
       author: "hn_throwaway_99",
       meta: "HN comment on item 44381639",
       quote:
-        "the speed and scale with which LLMs function completely breaks the use cases for which fair use was originally envisioned",
+        "LLM が動作する速度と規模は、フェアユースが元々想定していたユースケースを完全に破壊している。",
       url: "https://news.ycombinator.com/item?id=44381639",
     },
     {
@@ -41,7 +41,7 @@ export const detail: EventDetail = {
       author: "mystified5016",
       meta: "HN comment on item 44381639",
       quote:
-        "DDOSes are illegal attacks due to the speed and scale of the automation. If a website gets organically DOSed by Slashdot, that is not an illegal attack. LLMs 'reading' a book is not the same as a human reading a book in the exact same way that following a very popular link is not participating in a DDOS",
+        "DDoS は自動化の速度と規模のため違法攻撃だ。Slashdot でサイトが自然に DOS されるのは違法ではない。LLM が本を『読む』ことは、人間が本を読むことと同じではない——人気リンクを辿ることが DDoS に参加することではないのと同じだ。",
       url: "https://news.ycombinator.com/item?id=44381639",
     },
     {
@@ -49,10 +49,10 @@ export const detail: EventDetail = {
       author: "pseufaux",
       meta: "HN comment on item 44381639",
       quote:
-        "Not a lawyer, but how would you think the law react when I sell computer for authors with pdf of pirated books come pre-installed as part of the 'reference' for aspiring authors to look at, without permission from publishers? The issue is the recall LLMs have over copyrighted contents.",
+        "弁護士ではないが、出版社の許可なしに、海賊版の PDF がプリインストールされた『参考資料』として作家志望者に見せるコンピューターを作家に販売したら、法律はどう反応すると思う？ 問題は LLM が著作権コンテンツを思い出す能力にある。",
       url: "https://news.ycombinator.com/item?id=44381639",
     },
   ],
   aftermath:
-    "The ruling gave Anthropic a foundational fair-use precedent for training on purchased books while leaving the company with a $1.5 billion settlement for the pirated provenance of the same collection. The payout structure sent 100% of proceeds to self-published and rights-reverted authors, which is one way to convert a central library of stolen copies into a partially repaired revenue stream.",
+    "判決は、Anthropic に購入した本での学習に関する基礎的なフェアユース判例を与えたが、同じコレクションの海賊版由来については 15億ドルの和解を残した。支払い構造は、自費出版・権利戻り作者に 100%支払われた。盗んだ本の中央図書館を、部分的に修復された収入源に変換する一つの方法だ。",
 };

@@ -2,6 +2,16 @@ import type { TimelineEvent } from "@/data/timeline";
 
 export type TimelineCategory = TimelineEvent["category"];
 
+export const categoryLabels: Record<TimelineCategory, string> = {
+  Legal: "法務",
+  Quality: "品質",
+  Reliability: "信頼性",
+  Safety: "安全性",
+  Policy: "ポリシー",
+};
+
+export const displayCategory = (category: TimelineCategory) => categoryLabels[category];
+
 export const categoryStyles = {
   Legal:
     "border-[color-mix(in_srgb,var(--cat-legal)_45%,transparent)] bg-[color-mix(in_srgb,var(--cat-legal)_6%,transparent)] text-[color-mix(in_srgb,var(--cat-legal)_72%,transparent)]",

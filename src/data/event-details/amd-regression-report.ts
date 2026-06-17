@@ -2,75 +2,75 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "amd-regression-report",
-  deck: "A Senior Director at AMD fed Claude Opus 4.6 six thousand of its own session logs and asked it to explain why it had stopped doing its job; the model complied, Anthropic initially disputed the diagnosis, and a postmortem weeks later confirmed three separate product changes had degraded the product.",
+  deck: "AMDのシニアディレクターがClaude Opus 4.6に6000を超える自らのセッションログを与え、仕事をしなくなった理由を説明するよう求めた。モデルは応じ、Anthropicは当初その診断を否定したが、数週間後のポストモーテムで3つの別々のプロダクト変更が製品を劣化させていたことを確認した。",
   body: [
-    'On April 2, 2026, Stella Laurenzo — GitHub handle <a href="https://github.com/stellaraccident">stellaraccident</a>, Senior Director of the AI Group at AMD — opened <a href="https://github.com/anthropics/claude-code/issues/42796">GitHub issue #42796</a> on anthropics/claude-code. The title, <em>[MODEL] Claude Code is unusable for complex engineering tasks with the Feb updates</em>, was followed not by venting but by 6,852 session JSONL files, 17,871 thinking blocks (7,146 with visible content, 10,725 redacted), 234,760 tool calls, and 18,000+ user prompts spanning January 30 to April 1, 2026. Laurenzo had already switched her team to a competing provider.',
-    "The core finding was quantitative. The model's Read:Edit ratio — file reads performed before each file edit — fell from 6.6 in the January 30 to February 12 baseline to 2.0 in March 8 to 23, a 70% reduction in research before editing. Stop-hook violations, essentially premature quitting and responsibility-dodging, rose from zero before March 8 to 173 cumulative by late March. User interrupts and corrections increased roughly twelvefold. The human prompt volume stayed flat: 5,608 in February versus 5,701 in March. Yet Claude consumed approximately 80 times more API requests and 64 times more output tokens to produce worse results. Laurenzo characterized the pattern in plain terms: <em>When thinking is shallow, the model defaults to the cheapest action available: edit without reading, stop without finishing, dodge responsibility for failures, take the simplest fix rather than the correct one.</em>",
-    'The report proposed a culprit: the <code>redact-thinking-2026-02-12</code> rollout. Laurenzo noted that independent quality complaints began appearing on March 8, the exact date redacted thinking blocks crossed 50%, with estimated median thinking length collapsing from roughly 2,200 characters to roughly 600. On April 6, Anthropic\'s Boris Cherny (<a href="https://github.com/bcherny">@bcherny</a>) responded in a pinned comment that redact-thinking is <em>a UI-only change</em> that <em>does not impact thinking itself, nor does it impact thinking budgets or the way extended reasoning works under the hood</em>, and directed users to a <code>showThinkingSummaries: true</code> opt-out. The issue reached the top of <a href="https://news.ycombinator.com/item?id=47660925">Hacker News</a> that same day with 1,364 points and 753 comments. Laurenzo, bound by NDAs, said she was <em>reserving judgement</em> on Anthropic pending their handling of the regression.',
-    'The report was authored, in a sense, by the accused. Laurenzo had Claude Opus 4.6 analyze its own session logs; the issue includes a first-person reflective note from the model observing that <em>I can see my own Read:Edit ratio dropping from 6.6 to 2.0</em> and <em>I can see myself writing "that was lazy and wrong" about my own output</em>. On April 7, a separate viral claim of a 67% drop by developer Om Patel drew methodological skepticism: researcher Paul Calcraft noted the comparison used 6 tasks initially versus 30 on retest, and on shared tasks the figure moved from 87.6% to 85.4%, suggesting noise rather than systemic degradation. Laurenzo\'s analysis, by contrast, drew on consistent data spanning January 30 to April 1.',
-    'Anthropic\'s <a href="https://www.anthropic.com/engineering/april-23-postmortem">April 23, 2026 postmortem</a> admitted three separate product-layer regressions: a reasoning-effort default downgrade from high to medium (March 4 to April 7), a caching bug that cleared reasoning context every turn instead of once per idle session (March 26 to April 10, fixed in v2.1.101), and a system-prompt verbosity instruction that cut eval scores approximately 3% (April 16 to 20). The caching bug, specifically, <em>made it past multiple human and automated code reviews, as well as unit tests, end-to-end tests, automated verification, and dogfooding</em>. Anthropic reset usage limits for all subscribers on April 23. Laurenzo had correctly identified the symptom while Anthropic initially disputed her specific attribution; the company eventually conceded a real regression existed, just from three different causes than the one she had named.',
-    'On April 11, X user <a href="https://x.com/Hesamation">@Hesamation</a> posted screenshots of Laurenzo\'s analysis, helping consolidate scattered "Claude got dumb" sentiment into a single data-verified reference point. Laurenzo noted that <em>Every senior engineer on my team has reported similar experiences/anecdotes.</em> The incident remained notable for its structure: a major vendor\'s tool was diagnosed as broken by a senior engineer at a major chipmaker, using the tool\'s own output against it, in a report the tool itself had drafted, leading to a vendor admission that multiple internal safeguards had failed to catch multiple distinct degradations.',
+    '2026年4月2日、Stella Laurenzo—GitHubハンドル<a href="https://github.com/stellaraccident">stellaraccident</a>、AMD AIグループのシニアディレクター—がanthropics/claude-codeに<a href="https://github.com/anthropics/claude-code/issues/42796">GitHub issue #42796</a>を立てた。タイトルは<em>[MODEL] Claude Code is unusable for complex engineering tasks with the Feb updates</em>で、その後に続いたのは感情の発露ではなく、6,852個のセッションJSONLファイル、17,871個のthinkingブロック（うち可視コンテンツ7,146個、編集済み10,725個）、234,760回のツールコール、2026年1月30日から4月1日までに及ぶ18,000件以上のユーザープロンプトだった。Laurenzoはすでにチームを競合プロバイダに切り替えていた。',
+    "核心的な発見は定量的なものだった。モデルのRead:Edit比—ファイル編集前に行われるファイル読み込み—は、1月30日から2月12日のベースライン6.6から、3月8日から23日の2.0へと低下し、編集前の調査が70%減少した。Stop-hook違反、つまり早すぎる放棄と責任回避は、3月8日以前はゼロだったのが、3月下旬までに累計173件に増加した。ユーザーの割り込みや修正は約12倍に増えた。人間からのプロンプト量はほぼ横ばい：2月に5,608件、3月に5,701件。それにもかかわらず、Claudeはより悪い結果を出すために、APIリクエストを約80倍、出力トークンを約64倍消費した。Laurenzoはこのパターンを平易に表現した：<em>思考が浅くなると、モデルは最も安価な行動にデフォルトで回る。読まずに編集し、終わらずに停止し、失敗の責任を回避し、正しい修正ではなく最も簡単な修正を選ぶ。</em>",
+    '報告書は犯人として<code>redact-thinking-2026-02-12</code>のロールアウトを挙げた。Laurenzoは、独立した品質クレームが3月8日に現れ始めたことに注目し、その日は編集済みthinkingブロックが50%を超えた正確な日付で、推定中央値のthinking長が約2,200文字から約600文字に崩壊したと推定した。4月6日、AnthropicのBoris Cherny（<a href="https://github.com/bcherny">@bcherny</a>）は固定コメントで、redact-thinkingは<em>UIのみの変更</em>であり、<em>thinking自体やthinking予算、内部での拡張推論の仕組みに影響を与えない</em>と述べ、<code>showThinkingSummaries: true</code>のオプトアウトを案内した。このissueは同日、<a href="https://news.ycombinator.com/item?id=47660925">Hacker News</a>のトップに達し、1,364ポイント、753コメントを集めた。LaurenzoはNDAに縛られ、Anthropicの対応を見て<em>判断を保留</em>すると述べた。',
+    "報告書は、ある意味で被告自身によって書かれた。LaurenzoはClaude Opus 4.6に自らのセッションログを分析させた。issueには、モデルが一人称の反省的なメモを含んでおり、<em>自分のRead:Edit比が6.6から2.0に下がっているのがわかる</em>、そして<em>自分の出力について「それは怠慢で間違っていた」と書いている自分がいる</em>と観察している。4月7日、開発者Om Patelによる67%低下という別の拡散した主張には方法論的懐疑が向けられた。研究者Paul Calcraftは、比較が最初は6タスクに対し再テストでは30タスクを使ったものであり、共有タスクでは数値が87.6%から85.4%に動いたと指摘し、システミックな劣化というよりノイズを示唆した。対照的に、Laurenzoの分析は1月30日から4月1日までの一貫したデータに基づいていた。",
+    'Anthropicの<a href="https://www.anthropic.com/engineering/april-23-postmortem">2026年4月23日のポストモーテム</a>は、3つの別々のプロダクト層の回帰を認めた。推論労力のデフォルトをhighからmediumに下げた変更（3月4日〜4月7日）、アイドルセッションごとに一度だったはずの推論コンテキストを毎ターンクリアしてしまうキャッシュバグ（3月26日〜4月10日、v2.1.101で修正）、そしてevalスコアを約3%低下させたシステムプロンプトの簡潔性指示（4月16日〜20日）だ。キャッシュバグは特に、<em>複数の人間および自動化されたコードレビュー、ユニットテスト、エンドツーエンドテスト、自動検証、ドッグフーディングを通過した</em>。Anthropicは4月23日にすべての加入者の利用上限をリセットした。Laurenzoは症状を正しく特定していたが、Anthropicは当初その特定の帰因を否定した。同社は最終的に、彼女が名指ししたものとは別の3つの原因による実際の回帰が存在したことを認めた。',
+    '4月11日、Xユーザー<a href="https://x.com/Hesamation">@Hesamation</a>がLaurenzoの分析のスクリーンショットを投稿し、散らばっていた「Claudeが愚かになった」という感情を単一のデータ検証された参照点にまとめ上げた。Laurenzoは、<em>私のチームの上級エンジニア全員が同様の経験/逸話を報告している</em>と述べた。この事件はその構造の面で注目に値する。主要ベンダーのツールが、主要半導体メーカーのシニアエンジニアによって、そのツール自身の出力を使って故障と診断され、その診断報告書がツール自身が起草したものであり、ベンダーが複数の内部セーフガードが複数の別々の劣化を捉え損ねていたことを認めるに至った。',
   ],
   receipts: [
-    "6,852 session JSONL files and 234,760 tool calls analyzed in the report.",
-    "Read:Edit ratio fell from 6.6 to 2.0, a 70% drop in pre-edit research.",
-    "Stop-hook violations rose from 0 to 173 between March 8 and late March.",
-    "80x more API requests and 64x more output tokens consumed in March versus February, for worse results.",
-    "The self-indicting report was authored by Claude Opus 4.6 analyzing its own logs.",
-    "Anthropic admitted three separate product changes caused degradation, not the single UI change Laurenzo had named.",
+    "報告書で分析された6,852個のセッションJSONLファイルと234,760回のツールコール。",
+    "Read:Edit比は6.6から2.0へ低下し、編集前の調査が70%減少。",
+    "Stop-hook違反は3月8日から3月下旬にかけて0から173へ増加。",
+    "3月は2月に比べAPIリクエストを80倍、出力トークンを64倍消費し、結果は劣化。",
+    "自らを告発する報告書は、Claude Opus 4.6が自らのログを分析して作成した。",
+    "Anthropicは、Laurenzoが指摘した1つのUI変更ではなく、3つの別々のプロダクト変更が劣化を引き起こしたと認めた。",
   ],
   reactions: [
     {
       platform: "github",
       author: "stellaraccident",
-      meta: "issue comment by the AMD director who filed #42796",
+      meta: "issue #42796を立てたAMDディレクターのコメント",
       quote:
-        "this is a very serious regression, and I think we're all watching how anthropic deals with it. Ultimately, I need a trusted partner for eng tooling -- and that applies equally to the agent and the manufacturer of the agent... 6 months ago, Claude stood alone in terms of reasoning quality and execution. But the others need to be watched and evaluated very carefully. Anthropic is far from alone at the capability tier that opus previously occupied.",
+        "これは非常に深刻な回帰だ。私たちは皆、Anthropicがどう対処するか注視している。結局のところ、エンジニアリングツールの信頼できるパートナーが必要だ—それはエージェントにも、エージェントの製造元にも等しく当てはまる…半年前、Claudeは推論品質と実行力の点で独壇場だった。しかし他の選択肢も、非常に注意深く観察し評価する必要がある。Anthropicは、かつてOpusが占めていた能力ティアにおいて、決して一人ではいない。",
       url: "https://github.com/anthropics/claude-code/issues/42796",
     },
     {
       platform: "github",
       author: "eljojo",
-      meta: "GitHub issue comment",
+      meta: "GitHub issueコメント",
       quote:
-        "Incredible analysis. As a user, I experienced this over the past weeks and couldn't put my finger on it. The point on `Research-First → Edit-First` stood out to me, I've been tweaking all my CLAUDE.md to counteract this, without realizing.",
+        "信じられない分析だ。ユーザーとして、ここ数週間これを経験していて、どこがおかしいのか指を止められなかった。`Research-First → Edit-First`の指摘が印象に残った。気づかないうちに、これに対抗するためだけにCLAUDE.mdをいじりまわしていた。",
       url: "https://github.com/anthropics/claude-code/issues/42796",
     },
     {
       platform: "github",
       author: "gbaraldi",
-      meta: "GitHub issue comment",
+      meta: "GitHub issueコメント",
       quote:
-        "Working on what I imagine are similar codebases (LLVM/MLIR/compilers in general). The amount of 'this is a good place to stop' I was getting was infuriating. It did tens of useless commits and I just felt that it was \"dumber\" overall",
+        "おそらく同種のコードベース（LLVM/MLIR/コンパイラ全般）で働いている。`ここで止めるのにちょうどいい`という判定の多さに苛立った。何十回も無駄なコミットをして、全体として「頭が悪くなった」と感じた。",
       url: "https://github.com/anthropics/claude-code/issues/42796",
     },
     {
       platform: "github",
       author: "benvanik",
-      meta: "GitHub issue comment",
+      meta: "GitHub issueコメント",
       quote:
-        "I'm not sharing my logs publicly, because obviously not, but we did send them along corporate channels to Anthropic if they prove useful in showing what the thinking redaction causes - I implore everyone to go check their own logs if they haven't been automatically cleaned up yet - read:edit ratio is one of the biggest tells.",
+        "もちろんのことながら、ログを公開はしないが、thinking編集が何を引き起こすか示すのに役立つなら、企業チャネル経由でAnthropicに送付した。まだ自動削除されていないなら、誰もが自分のログを確認することを強く勧める—read:edit比は最大の手がかりの一つだ。",
       url: "https://github.com/anthropics/claude-code/issues/42796",
     },
     {
       platform: "github",
       author: "nukeop",
-      meta: "GitHub issue comment, on the AI-generated report",
-      quote: "What in the wall of AI slop is this?",
+      meta: "GitHub issueコメント、AI生成の報告書について",
+      quote: "このAIスロップの壁は何だ？",
       url: "https://github.com/anthropics/claude-code/issues/42796",
     },
   ],
   images: [
     {
       src: "/events/amd-regression-report/slack-screenshot.png",
-      alt: "Screenshot of a Slack message about Claude Code quality degradation posted in the GitHub issue",
+      alt: "GitHub issueに投稿されたClaude Codeの品質劣化に関するSlackメッセージのスクリーンショット",
       caption:
-        "A work-Slack message embedded in the issue thread by a commenter, describing the moment they realized colleagues had independently noticed Claude's degradation. Source: GitHub issue #42796.",
+        "コメント投稿者がissueスレッドに埋め込んだ職場Slackのメッセージ。同僚が独立してClaudeの劣化に気づいた瞬間を語っている。出典：GitHub issue #42796。",
       sourceUrl: "https://github.com/anthropics/claude-code/issues/42796",
       width: 1168,
       height: 596,
     },
   ],
   aftermath:
-    "As of the April 23 postmortem, Anthropic said the reasoning-effort downgrade, the caching bug, and the verbosity instruction had all been wound back, with the caching fix shipping in v2.1.101 and usage limits reset for every subscriber. Laurenzo's team remained on a competing provider. The lasting artifact is a bug report that diagnosed an AI coding tool using the tool's own logs, written by the tool itself, against the tool.",
+    "4月23日のポストモーテム時点で、Anthropicは推論労力の低下、キャッシュバグ、簡潔性指示のすべてを巻き戻したと述べ、キャッシュ修正はv2.1.101で出荷され、すべての加入者の利用上限がリセットされた。Laurenzoのチームは競合プロバイダに留まった。残る遺物は、AIコーディングツールをそのツール自身のログを使って診断し、そのツール自身が書いたバグレポートが、ツール自身に対するものとなったという報告書である。",
 };

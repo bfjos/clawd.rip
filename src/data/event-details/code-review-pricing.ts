@@ -2,21 +2,21 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "code-review-pricing",
-  deck: "Anthropic launched Claude Code Review on March 9, 2026, priced at roughly $15 to $25 per pull request in tokens, and immediately faced comparisons to subscription competitors charging flat monthly rates.",
+  deck: "Anthropic は 2026年3月9日に Claude Code Review を立ち上げ、1プルリクエストあたり約 15〜25ドルのトークン課金に設定。すぐに月額定額の競合と比較され、批判を浴びた。",
   body: [
-    'Anthropic <a href="https://claude.com/blog/code-review">rolled out Code Review for Claude Code</a> on March 9, 2026, as a research preview limited to Team and Enterprise plans. The feature is billed on token usage, with reviews averaging <a href="https://claude.com/blog/code-review">$15 to $25 per review</a>, scaling upward with pull request size and complexity. Anthropic explicitly framed the cost by saying Code Review <a href="https://claude.com/blog/code-review">"optimizes for depth and is more expensive than lighter-weight solutions"</a> like its existing open-source GitHub Action.',
-    'The tool <a href="https://claude.com/blog/code-review">"dispatches a team of agents on every PR to catch the bugs that skims miss,"</a> modeled on Anthropic\'s internal review process, and a single review takes roughly 20 minutes. Boris Cherny, head of Claude Code, said the tool was built internally first because <a href="https://x.com/bcherny/status/2031089411820228645">"Code output per Anthropic engineer is up 200% this year and reviews were the bottleneck."</a> The company reported that on large PRs of 1,000 or more lines, <a href="https://claude.com/blog/code-review">84% received findings averaging 7.5 issues</a>, while on small PRs under 50 lines, 31% received findings averaging 0.5 issues, with fewer than 1% of findings marked incorrect by engineers.',
-    'The official Claude account defended the pricing by stating that <a href="https://x.com/claudeai/status/2031088175456903667">"Code Review optimizes for depth and may be more expensive than other solutions... Reviews generally average $15-25, billed on token usage, and they scale based on PR complexity."</a> Anthropic engineer Thariq Shihipar added that the feature <a href="https://www.aol.com/articles/anthropic-launched-ai-code-reviewer-060929137.html">"uses a lot more compute and tends to catch more difficult bugs."</a> Critics calculated that a 100-developer team submitting one pull request per workday could spend roughly <a href="https://www.aol.com/articles/anthropic-launched-ai-code-reviewer-060929137.html">$40,000 per month, or about $480,000 per year</a>, though this was a community and press calculation, not an Anthropic figure.',
-    'Competitors charge flat rates. <a href="https://www.coderabbit.ai/pricing">CodeRabbit charges $24 per month per user billed annually</a> for its Pro plan, which includes a free tier and a 14-day free trial. <a href="https://www.greptile.com/pricing">Greptile charges $30 per seat per month</a>, including 50 code reviews per seat, with additional reviews costing $1 each. Developer Daniel Avila tested the tool and <a href="https://x.com/dani_avila7/status/2031151975732002930">reported seeing "absolutely NO additional functionality or improvement"</a> over setting up a <code>claude.yml</code> GitHub Action.',
-    'Cost controls exist, including <a href="https://claude.com/blog/code-review">monthly organization caps, repository-level controls, and an analytics dashboard</a>. On Hacker News, however, developer raflueder reported running <a href="https://news.ycombinator.com/item?id=47313787">200-plus pull requests with two rounds each over February using Opus 4.6 for a total of $19.50</a>, an average of about $0.04 per review. TechRadar and AOL coverage <a href="https://www.techradar.com/pro/anthropic-launches-a-new-code-review-tool-to-check-ai-generated-content-but-it-might-cost-you-more-than-youd-hope">dated the public reporting to March 10, 2026</a>, one day after the blog\'s stated March 9 launch.',
+    'Anthropic は 2026年3月9日に<a href="https://claude.com/blog/code-review">Claude Code 用の Code Review</a> を Team/Enterprise プラン限定のリサーチプレビューとして公開した。機能はトークン使用量に応じて課金され、レビューは平均して<a href="https://claude.com/blog/code-review">1件 15〜25ドル</a>、プルリクエストのサイズや複雑さに応じて増える。Anthropic は明示的に、Code Review は既存の軽量なオープンソース GitHub Action とは異なり、<a href="https://claude.com/blog/code-review">「深さを最適化するため、より高価」</a>だと料金設定を位置づけた。',
+    'このツールは<a href="https://claude.com/blog/code-review">「 superficial なレビューが見逃すバグを捕まえるため、すべての PR にエージェントチームを派遣する」</a>と説明され、Anthropic の内部レビュープロセスをモデルにしている。1回のレビューに約20分かかる。Claude Code 責任者の Boris Cherny は、内部で最初に作られた理由として<a href="https://x.com/bcherny/status/2031089411820228645">「Anthropic エンジニア1人あたりのコード出力は今年200%増えており、レビューがボトルネックだった」</a>と述べた。同社は、1,000行以上の大きな PR では<a href="https://claude.com/blog/code-review">84%に発見があり、平均 7.5件の問題</a>が見つかったと報告。50行未満の小さな PR では31%に発見があり平均0.5件で、エンジニアが誤りとマークしたのは1%未満だった。',
+    '公式 Claude アカウントは料金を擁護し、<a href="https://x.com/claudeai/status/2031088175456903667">「Code Review は深さを最適化するため、他のソリューションより高価になる場合がある……レビューは一般的に 15〜25ドル平均で、トークン使用量に応じて課金され、PR の複雑さに応じて変動する」</a>と説明した。Anthropic エンジニアの Thariq Shihipar も、この機能は<a href="https://www.aol.com/articles/anthropic-launched-ai-code-reviewer-060929137.html">「はるかに多くの計算リソースを使い、より難しいバグを見つける傾向がある」</a>と付け加えた。批評家は、100人の開発者チームが営業日に1件の PR を出せば、月に約<a href="https://www.aol.com/articles/anthropic-launched-ai-code-reviewer-060929137.html">4万ドル、年間で約 48万ドル</a>になると計算した。ただしこれはコミュニティや報道の試算で、Anthropic の数字ではない。',
+    '競合は定額制。<a href="https://www.coderabbit.ai/pricing">CodeRabbit の Pro プランは年払いで月額 24ドル/ユーザー</a>で、無料枠と14日間無料トライアル付き。<a href="https://www.greptile.com/pricing">Greptile は月額 30ドル/シート</a>で、シートあたり50件のコードレビューが含まれ、追加は1件 1ドル。開発者の Daniel Avila はこのツールをテストし、<code>claude.yml</code> GitHub Action をセットアップした場合と比べて<a href="https://x.com/dani_avila7/status/2031151975732002930">「全く追加の機能や改善が見られない」</a>と報告した。',
+    'コスト管理機能は<a href="https://claude.com/blog/code-review">組織の月次上限、リポジトリ単位のコントロール、分析ダッシュボード</a>などがある。しかし Hacker News では、開発者の raflueder が 2月に Opus 4.6 を使って 200件以上の PR を2ラウンドずつ実行し、合計 <a href="https://news.ycombinator.com/item?id=47313787">19.50ドルだった</a>と報告。1レビューあたり約 0.04ドルだ。TechRadar と AOL の報道は<a href="https://www.techradar.com/pro/anthropic-launches-a-new-code-review-tool-to-check-ai-generated-content-but-it-might-cost-you-more-than-youd-hope">2026年3月10日</a>と日付を置いており、ブログの公開日（3月9日）の翌日だった。',
   ],
   receipts: [
-    "Anthropic launched Code Review on March 9, 2026, as a research preview for Team and Enterprise plans.",
-    "Reviews average $15 to $25 per pull request, billed by token usage, scaling with PR size and complexity.",
-    "Competitor CodeRabbit Pro is $24/month per user; Greptile is $30/seat/month for 50 reviews plus $1 each.",
-    "Community/press calculation: a 100-developer team doing one PR per workday could cost roughly $40,000/month, about $480,000/year.",
-    "Developer raflueder ran 200+ PRs with two rounds each on Opus 4.6 in February for $19.50 total, about $0.04 per review.",
-    "On large PRs (1,000+ lines) 84% received findings averaging 7.5 issues; fewer than 1% of findings were marked incorrect.",
+    "Anthropic は 2026年3月9日に Code Review を Team/Enterprise 向けリサーチプレビューとして公開した。",
+    "レビューは平均 15〜25ドル/PR で、トークン使用量に応じ、PR のサイズや複雑さに応じて増加する。",
+    "競合: CodeRabbit Pro は月額 24ドル/ユーザー。Greptile は月額 30ドル/シートで 50件レビュー + 追加1ドル。",
+    "コミュニティ/報道の試算: 100人の開発者チームが営業日に1件 PR 出すと、月約 4万ドル、年間約 48万ドル。",
+    "開発者 raflueder は 2月に Opus 4.6 で 200件以上の PR を2ラウンドずつ実行し、合計 19.50ドル（1件約 0.04ドル）。",
+    "大きな PR（1,000行以上）では 84%に発見があり平均 7.5件。誤りとマークされたのは 1%未満。",
   ],
   reactions: [
     {
@@ -24,7 +24,7 @@ export const detail: EventDetail = {
       author: "@initjean (Jean P.D. Meijer)",
       meta: "X post",
       quote:
-        "how is Claude Code Review is $15 to $25 per PR?! one review is basically the price of an unlimited sub to most code review apps did they forget to subsidize the tokens?",
+        "Claude Code Review が PR あたり 15〜25ドルってどういうこと？ 1回のレビューがほとんどのコードレビューアプリの無制限サブスクと同じ値段じゃないか。トークン補助を忘れたのか？",
       url: "https://x.com/initjean/status/2031143406336970755",
     },
     {
@@ -32,7 +32,7 @@ export const detail: EventDetail = {
       author: "@JorgeCastilloPr (Jorge Castillo)",
       meta: "X post",
       quote:
-        "Holy moly. The new Claude Code Review tool costs $25 per PR. At least they were honest about the pricing 😅",
+        "えげつない。新しい Claude Code Review ツールは PR あたり 25ドルもする。少なくとも価格は正直に提示してるな 😅",
       url: "https://x.com/JorgeCastilloPr/status/2031125264172732794",
     },
     {
@@ -40,7 +40,7 @@ export const detail: EventDetail = {
       author: "@nnennahacks (Nnenna)",
       meta: "X post, screenshot of cost breakdown",
       quote:
-        "I tested out claude code review. These are the real costs for 3 different repos. At the bottom, the avg cost is $20.75 for 2 PRs. Only 150 lines of code changed.",
+        "claude code review を試してみた。3つの異なるリポジトリでの実際のコストだ。下を見ると、2PR で平均 20.75ドル。変更コードは 150行しかない。",
       url: "https://x.com/nnennahacks/status/2031386841371353104",
     },
     {
@@ -48,7 +48,7 @@ export const detail: EventDetail = {
       author: "cbovis",
       meta: "HN: 'Code Review for Claude Code', 83 points, 48 comments",
       quote:
-        "This cost seems wild. For comparison GitHub Copilot Code Review is four cents per review once you're outside of the credits.",
+        "このコストは狂ってる。比較すると GitHub Copilot Code Review はクレジットを超えたら 1レビュー 4セントだ。",
       url: "https://news.ycombinator.com/item?id=47313787",
     },
     {
@@ -56,7 +56,7 @@ export const detail: EventDetail = {
       author: "8cvor6j844qw_d6",
       meta: "HN comment",
       quote:
-        "Greptile charges $30 per month for 50 reviews, with $1 per additional review. At average of $15~25 per review, this is way more expensive.",
+        "Greptile は月 30ドルで 50レビュー、追加は 1ドル。平均 15〜25ドルなら、はるかに高い。",
       url: "https://news.ycombinator.com/item?id=47313787",
     },
     {
@@ -64,11 +64,11 @@ export const detail: EventDetail = {
       author: "SkyPuncher",
       meta: "HN comment, defending the price",
       quote:
-        "Senior+ engineers easily make $100+ an hour. This is equivalent to 15 minutes of their time max... $20 becomes an incredibly easy sell.",
+        "シニア以上のエンジニアは簡単に時給 100ドル以上稼ぐ。これは最大でも彼らの15分に相当……20ドルは信じられないほど安い売り込みだ。",
       url: "https://news.ycombinator.com/item?id=47313787",
     },
   ],
   images: [],
   aftermath:
-    "Claude Code Review remains available as a research preview to Team and Enterprise customers at roughly $15 to $25 per review, alongside monthly caps and repository controls. The gap between its per-token pricing and competitors' flat-rate models, plus developer reports of running comparable reviews for cents on a GitHub Action, remains the central point of comparison.",
+    "Claude Code Review は、月次上限とリポジトリ管理機能とともに、Team/Enterprise 顧客向けのリサーチプレビューとして引き続き 1レビューあたり約 15〜25ドルで提供されている。トークン課金と競合の定額モデルとの差、そして開発者が GitHub Action で数セントで同等のレビューを実行したという報告が、比較の中心になっている。",
 };

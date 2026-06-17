@@ -2,21 +2,21 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "distillation-attacks",
-  deck: "Anthropic accused three Chinese AI labs of industrial-scale distillation through 24,000 fake accounts and 16 million Claude exchanges, a disclosure that promptly raised questions about what exactly constitutes 'industrial' scale.",
+  deck: "Anthropic は 3つの中国 AI 研究所に、2万4000の偽アカウントと 1600万回の Claude やり取りを通じた産業規模の蒸留攻撃を告発した。その開示は、「産業規模」の定義は一体何か、という疑問をすぐに招いた。",
   body: [
-    'On February 23, 2026, Anthropic published a post titled <a href="https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks">"Detecting and preventing distillation attacks,"</a> accusing DeepSeek, Moonshot AI, and MiniMax of systematic extraction of Claude\'s capabilities via approximately 24,000 fraudulent accounts generating over 16 million exchanges. The per-lab breakdown showed DeepSeek at over 150,000 exchanges targeting reasoning and reward modeling, Moonshot at over 3.4 million for agentic reasoning and coding, and MiniMax at over 13 million for agentic coding and tool orchestration, with Anthropic noting it detected MiniMax\'s campaign live and watched the lab pivot targeting within 24 hours of a new Claude model release.',
-    'Anthropic framed the activity as a national security risk, arguing distillation strips safety guardrails and could enable offensive cyber operations, disinformation campaigns, and mass surveillance, while also undermining US chip export controls. Dmitri Alperovitch, Silverado Policy Accelerator chairman and former CrowdStrike CTO, backed this framing, stating <a href="https://techcrunch.com/2026/02/23/anthropic-accuses-chinese-ai-labs-of-mining-claude-as-us-debates-ai-chip-exports/">"It\'s been clear for a while now that part of the reason for the rapid progress of Chinese AI models has been theft via distillation of U.S. frontier models."</a> The disclosure landed after the Trump administration approved exports of advanced H200 chips to China, and Anthropic argued restricted chip access limits both direct training and distillation scale.',
-    'Critics quickly noted the asymmetry in the accused. DeepSeek\'s alleged share was only about 150,000 exchanges, roughly 1% of the 16 million total, with the bulk attributed to MiniMax and Moonshot. Nathan Lambert of Interconnects argued that <a href="https://www.interconnects.ai/p/how-much-does-distillation-really">"quantity is a pretty crude way to measure impact,"</a> pointing out that frontier models now rely on at-scale reinforcement learning where generation constitutes the majority of compute cost and "can\'t be generations from another model." Lambert also highlighted selective enforcement: API-based distillation has long violated terms of service, yet "no action has been taken against any smaller model builders" until this disclosure, and "kneecapping model distillation will be far harder than restricting...GPUs."',
-    'The <a href="https://www.scmp.com/tech/tech-war/article/3344499/anthropics-distilling-charges-against-chinese-firms-expose-ai-training-grey-area">South China Morning Post</a> added historical context, noting Geoffrey Hinton and colleagues published the foundational knowledge-distillation research in 2015, framing the dispute as exposing an "AI training grey area." Distillation, in other words, is a standard, decades-old technique.',
-    'Theo Browne of t3.gg offered a traffic benchmark, reacting that 16 million exchanges is "really not much" for an AI app and noting that his own T3 Chat product hits that volume most months. Anthropic said it detected the activity through IP data, account metadata, shared payment methods, synchronized traffic patterns, and API usage patterns, and responded by enhancing detection, sharing intelligence with partners, and tightening API access controls. The company did not specify whether tightening access controls would affect developers whose monthly conversation volumes resemble the alleged attack.',
+    '2026年2月23日、Anthropic は <a href="https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks">「Detecting and preventing distillation attacks」</a> という投稿を公開。DeepSeek、Moonshot AI、MiniMax を、約 2万4000の不正アカウントで 1,600万回以上のやり取りを生成し、Claude の能力を体系的に抽出したと告発した。研究所別の内訳は、DeepSeek が推論と報酬モデリングを狙った 15万件以上、Moonshot がエージェント型推論とコーディングを狙った 340万件以上、MiniMax がエージェント型コーディングとツールオーケストレーションを狙った 1,300万件以上。Anthropic は MiniMax のキャンペーンをリアルタイムで検出し、新しい Claude モデルがリリースされてから24時間以内に標的を切り替えるのを確認したと述べた。',
+    'Anthropic はこの活動を国家安全保障リスクと位置づけ、蒸留が安全ガードレールを剥ぎ取り、攻撃的サイバー作戦、偽情報キャンペーン、大規模監視を可能にし、米国の半導体輸出規制を損なうと主張した。Silverado Policy Accelerator 会長で元 CrowdStrike CTO の Dmitri Alperovitch はこの枠組みを支持し、<a href="https://techcrunch.com/2026/02/23/anthropic-accuses-chinese-ai-labs-of-mining-claude-as-us-debates-ai-chip-exports/">「中国 AI モデルの急速な進歩の理由の一部は、米国のフロンティアモデルからの蒸留による盗用だというのは、しばらく前から明らかだった」</a>と述べた。開示は、Trump 政権が中国への先進 H200 チップ輸出を承認した後に行われ、Anthropic は制限されたチップアクセスが直接の学習と蒸留の規模の両方を制限すると主張した。',
+    '批評家はすぐに、告発された研究所間の非対称性を指摘した。DeepSeek の推定シェアは約 15万件で、1,600万回の合計の約1%に過ぎず、大半は MiniMax と Moonshot に帰属していた。Interconnects の Nathan Lambert は<a href="https://www.interconnects.ai/p/how-much-does-distillation-really">「影響を測るのに数量はかなり粗い方法だ」</a>と主張。フロンティアモデルは現在、大規模強化学習に依存しており、生成が計算コストの大半を占め、「他のモデルからの生成では不可能だ」と指摘した。Lambert はまた、選択的執行を強調。API ベースの蒸留は長期にわたり利用規約違反だが、「この開示までは小規模なモデルビルダーに対して何も行動が取られていなかった」とし、「モデル蒸留を阻止することは GPU の規制……よりはるかに難しいだろう」と述べた。',
+    '<a href="https://www.scmp.com/tech/tech-war/article/3344499/anthropics-distilling-charges-against-chinese-firms-expose-ai-training-grey-area">South China Morning Post</a> は歴史的文脈を加え、Geoffrey Hinton らが 2015年に基礎的な知識蒸留研究を発表したことを指摘し、この論争を「AI 学習のグレーゾーン」を暴いたものとして位置づけた。つまり、蒸留は標準的で数十年の歴史がある技術なのだ。',
+    't3.gg の Theo Browne はトラフィックのベンチマークを提供し、1,600万回のやり取りは AI アプリにとって「そんなに多くない」と反応。自分の T3 Chat プロダクトはほとんどの月にそのボリュームに達すると述べた。Anthropic は、IP データ、アカウントメタデータ、共有支払い方法、同期されたトラフィックパターン、API 使用パターンを通じて活動を検出し、検出能力の強化、パートナーとの情報共有、API アクセス制御の厳格化で対応したと述べた。同社は、アクセス制御の厳格化が、月間の会話量がこの攻撃と似た開発者に影響するかどうかは明確にしなかった。',
   ],
   receipts: [
-    "24,000 fraudulent accounts generated over 16 million exchanges with Claude",
-    "Per-lab share: DeepSeek over 150,000; Moonshot AI over 3.4 million; MiniMax over 13 million",
-    "DeepSeek's slice was roughly 1% of the 16 million total",
-    "Anthropic said MiniMax pivoted its targeting within 24 hours of a new Claude model release",
-    'Nathan Lambert (Interconnects): "quantity is a pretty crude way to measure impact"',
-    "Knowledge distillation was published by Geoffrey Hinton and colleagues in 2015",
+    "2万4000の不正アカウントが Claude と 1,600万回以上のやり取りを生成した。",
+    "研究所別シェア: DeepSeek 15万件以上、Moonshot AI 340万件以上、MiniMax 1,300万件以上。",
+    "DeepSeek のシェアは 1,600万回の合計の約1%に過ぎなかった。",
+    "Anthropic は MiniMax が新しい Claude モデルリリースから24時間以内に標的を切り替えたと述べた。",
+    'Nathan Lambert（Interconnects）: 「影響を測るのに数量はかなり粗い方法だ」。',
+    "知識蒸留は Geoffrey Hinton らによって 2015年に発表された。",
   ],
   reactions: [
     {
@@ -24,7 +24,7 @@ export const detail: EventDetail = {
       author: "@AnthropicAI",
       meta: "Official Anthropic announcement tweet",
       quote:
-        "We've identified industrial-scale distillation attacks on our models by DeepSeek, Moonshot AI, and MiniMax. These labs created over 24,000 fraudulent accounts and generated over 16 million exchanges with Claude, extracting its capabilities to train and improve their own models.",
+        "DeepSeek、Moonshot AI、MiniMax による、当社モデルに対する産業規模の蒸留攻撃を特定しました。これらの研究所は 2万4,000以上の不正アカウントを作成し、Claude と 1,600万回以上のやり取りを生成し、その能力を抽出して自社モデルの学習・改善に利用しました。",
       url: "https://x.com/AnthropicAI/status/2025997928242811253",
     },
     {
@@ -32,7 +32,7 @@ export const detail: EventDetail = {
       author: "dude250711",
       meta: "HN comment, distillation attacks thread",
       quote:
-        "It's absolutely mind boggling to see claims of model distillation being theft, a class of attack, and all sorts of claims all the while Meta is in court for copyright violation, anthropic has had to settle a case with authors. With distillation 'attacks' at least they paid API fees.",
+        "モデル蒸留が盗難であり、攻撃の一類である、などと主張されているのを見ると本当に信じられない。 meanwhile Meta は著作権侵害で法廷にいるし、Anthropic も作家たちと和解している。蒸留『攻撃』は少なくとも API 料金を払っている。",
       url: "https://news.ycombinator.com/item?id=48477189",
     },
     {
@@ -40,7 +40,7 @@ export const detail: EventDetail = {
       author: "anon373839",
       meta: "HN comment",
       quote:
-        "Distillation is not an 'attack', despite Anthropic themselves coining the self-serving phrase 'distillation attack'. And as others have noted, it is precisely identical to the sort of 'attack' on published works which Anthropic themselves used to train their models.",
+        "蒸留は『攻撃』ではない。Anthropic 自身が自己奉仕的な言い回しとして『蒸留攻撃』という言葉を作ったとしても。そして他の人も指摘しているように、これは Anthropic 自身がモデルを学習させるのに使ってきた公開作品に対する『攻撃』とまったく同じ種類のものだ。",
       url: "https://news.ycombinator.com/item?id=48485901",
     },
     {
@@ -48,7 +48,7 @@ export const detail: EventDetail = {
       author: "ImprobableTruth",
       meta: "HN, 'Notes on DeepSeek' thread (203 points)",
       quote:
-        "Anthropic had to settle with authors because they literally pirated books! Their behavior regarding distillation is genuinely beyond parody.",
+        "Anthropic は文字通り本を海賊版で使ったから作家たちと和解しなければならなかった。彼らの蒸留に対する振る舞いは、本当にパロディを超えている。",
       url: "https://news.ycombinator.com/item?id=48476474",
     },
     {
@@ -56,11 +56,11 @@ export const detail: EventDetail = {
       author: "amunozo",
       meta: "HN comment",
       quote:
-        "Tell me, where did OpenAI and Anthropic got their training data? From public sources using legitimate means? Don't make me laugh.",
+        "教えてほしい。OpenAI も Anthropic も学習データはどこから得たの？ 公的なソースを正当な手段で？ 笑わせないでくれ。",
       url: "https://news.ycombinator.com/item?id=48476474",
     },
   ],
   images: [],
   aftermath:
-    "Anthropic's disclosure did not prompt visible policy changes from the accused labs, and the company continued to operate API access with tightened controls. The H200 chip exports to China proceeded. Distillation remained both a standard academic technique dating to 2015 and, per Anthropic, a national security threat, with the distinction apparently depending on the scale of the account farm and the jurisdiction of its operator.",
+    "Anthropic の開示は、告発された研究所から目に見える政策変更を引き出さず、同社は API アクセス制御を厳格化しながら運営を続けた。中国への H200 チップ輸出は進んだ。蒸留は、2015年に遡る標準的な学術技術であり、Anthropic によれば国家安全保障上の脅威でもあり、その区別はどうやらアカウントファームの規模とその運営主体の管轄区域に依存しているようだ。",
 };

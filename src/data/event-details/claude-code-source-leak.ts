@@ -2,29 +2,29 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "claude-code-source-leak",
-  deck: "Anthropic shipped a 59.8 MB source map that decompiled Claude Code into roughly half a million lines of TypeScript, then insisted no customer data was exposed, which is not the same as no damage done.",
+  deck: "Anthropic は 59.8 MB のソースマップを同梱して出荷し、Claude Code を約 50万行の TypeScript に逆コンパイル可能にした。同社は顧客データの流出がないと強調したが、それは「被害がなかった」とは違う。",
   body: [
-    'On March 30–31, 2026, Anthropic published <code>@anthropic-ai/claude-code</code> version 2.1.88 to the public npm registry with a 59.8 MB JavaScript source map bundled inside. The <code>.map</code> file mapped the minified production code back to roughly 512,000–513,000 lines of unobfuscated TypeScript across approximately 1,906 files, effectively shipping a readable blueprint of the application alongside the application itself. <a href="https://www.zscaler.com/blogs/security-research/anthropic-claude-code-leak">Zscaler</a> noted the scale of the exposure.',
-    'Security researcher Chaofan Shou, posting as <a href="https://x.com/Fried_rice/status/2038894956459290963">@Fried_rice</a>, publicly disclosed the leak on X on March 31, 2026, writing that Claude code source had been leaked via a map file in their npm registry. The post amassed more than 28 million views. Within hours, the leaked codebase had been mirrored on GitHub in reconstructed repositories that surpassed 84,000 stars and 82,000 forks; <a href="https://cybernews.com/tech/claude-code-leak-spawns-fastest-github-repo/">Cybernews</a> described one as the fastest-growing repository in GitHub\'s history.',
-    'Analysts picking through the roughly 512,000 lines found approximately 44 feature flags for unreleased functionality. These included KAIROS, a persistent autonomous background agent; BUDDY, a Tamagotchi-style terminal pet offered in 18 species variants; and ULTRAPLAN, a remote Opus 4.6 planning session lasting up to 30 minutes, alongside Voice Mode, Bridge Mode, and Multi-Agent Coordinator Mode. <a href="https://www.zscaler.com/blogs/security-research/anthropic-claude-code-leak">Analysts</a> also found an anti-distillation mode designed to inject fake tools to poison competitor model training and client attestation via cryptographic billing headers.',
-    "Also present was a sentiment and frustration detector that relied on regex patterns matching strings such as <code>wtf|ffs|shit</code>, suggesting the coding assistant was prepared to gauge user irritation with lexical exactitude if not psychological nuance.",
-    'The root cause was a multi-factor packaging error. <a href="https://github.com/oven-sh/bun/issues/28001">Bun issue #28001</a> tracks the bundler\'s behavior of generating source maps even when <code>development: false</code> is explicitly set. Anthropic compounded this by failing to exclude <code>*.map</code> in either <code>.npmignore</code> or the <code>files</code> field of <code>package.json</code>, and by running no CI check or manual review to catch a 59.8 MB cartographic artifact before publication. An AI coding tool built to manage repositories failed to audit its own.',
-    'Anthropic’s official statement <a href="https://officechai.com/ai/claude-code-leak-was-human-error-no-one-was-fired-claude-code-creator-boris-cherny/">framed the incident</a> as "a release packaging issue caused by human error, not a security breach," adding that "no sensitive customer data or credentials were involved or exposed." The company then began issuing copyright takedown requests to suppress the mirrors, <a href="https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/">accidentally affecting roughly 8,100 repositories</a> before <a href="https://www.techradar.com/ai-platforms-assistants/claude/the-irony-is-rich-anthropic-issues-copyright-takedown-requests-in-attempt-to-stem-claude-code-leak">retracting the scope to one repository and 96 forks</a>. A firm that argues training AI on copyrighted material is fair use found its own intellectual property less eager to be freely distributed.',
+    '2026年3月30〜31日、Anthropic は <code>@anthropic-ai/claude-code</code> バージョン 2.1.88 を公開 npm レジストリに公開したが、59.8 MB の JavaScript ソースマップが同梱されていた。<code>.map</code> ファイルは本番の縮小コードを約 1,906ファイル、51万2,000〜51万3,000行の難読化されていない TypeScript にマッピングしており、事実上、アプリと一緒に読みやすい設計図を出荷したことになる。<a href="https://www.zscaler.com/blogs/security-research/anthropic-claude-code-leak">Zscaler</a> はこの露呈の規模を指摘した。',
+    'セキュリティ研究者の Chaofan Shou（<a href="https://x.com/Fried_rice/status/2038894956459290963">@Fried_rice</a>）は2026年3月31日に X で漏洩を公開。npm レジストリの map ファイル経由で Claude Code のソースが漏れたと書き、投稿は 2,800万回以上の閲覧を集めた。数時間以内に、漏洩したコードベースは GitHub にミラーされ、再構築されたリポジトリは 8万4,000 stars と 8万2,000 forks を超えた。<a href="https://cybernews.com/tech/claude-code-leak-spawns-fastest-github-repo/">Cybernews</a> は、それが GitHub 史上成長速度最速のリポジトリの一つだと伝えた。',
+    '約 51万2,000行を整理したアナリストは、未発表機能の機能フラグが約 44個あると特定した。中には永続的な自律型バックグラウンドエージェント「KAIROS」、18種類のバリエーションを持つたまごっち風ターミナルペット「BUDDY」、最大30分間続くリモート Opus 4.6 計画セッション「ULTRAPLAN」、Voice Mode、Bridge Mode、Multi-Agent Coordinator Mode などが含まれる。<a href="https://www.zscaler.com/blogs/security-research/anthropic-claude-code-leak">アナリスト</a>は、競合モデルの学習を妨害するため偽ツールを注入するアンチ蒸留モードや、暗号化請求ヘッダーによるクライアント証明も発見した。',
+    "また、<code>wtf|ffs|shit</code> などの文字列にマッチする正規表現に依存した感情・フラストレーション検出器も含まれていた。コーディングアシスタントは、心理的なニュアンスはともかく、語彙的には正確にユーザーイライラを測定する準備ができていたようだ。",
+    '根本原因は複合的なパッケージングミスだった。<a href="https://github.com/oven-sh/bun/issues/28001">Bun issue #28001</a> では、<code>development: false</code> が明示的に設定されていてもバンドラーがソースマップを生成する挙動が追跡されている。Anthropic はさらに <code>.npmignore</code> または <code>package.json</code> の <code>files</code> フィールドで <code>*.map</code> を除外せず、59.8 MB の地図資料を公開前に検出する CI チェックや手動レビューも行わなかった。リポジトリ管理を目的とした AI コーディングツールが、自分のリポジトリを監査できなかった。',
+    'Anthropic の公式声明は<a href="https://officechai.com/ai/claude-code-leak-was-human-error-no-one-was-fired-claude-code-creator-boris-cherny/">この事件を</a>「セキュリティ侵害ではなく、人為的ミスによるリリースパッケージングの問題」と位置づけ、「機密性の高い顧客データや認証情報が関与または流出していない」と付け加えた。同社はその後、ミラーを抑止するための著作権削除要請を開始し、<a href="https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/">約 8,100のリポジトリに誤って影響</a>した後、<a href="https://www.techradar.com/ai-platforms-assistants/claude/the-irony-is-rich-anthropic-issues-copyright-takedown-requests-in-attempt-to-stem-claude-code-leak">1つのリポジトリと 96のフォークに範囲を縮小</a>した。AI に著作権素材を学習させることがフェアユースだと主張する企業が、自社の知的財産が自由に流通することにはそれほど寛容ではなかった。',
   ],
   receipts: [
-    "The leaked .map file weighed 59.8 MB and mapped back to roughly 512,000–513,000 lines of TypeScript across ~1,906 files.",
-    "Disclosure post by @Fried_rice on March 31, 2026, amassed more than 28 million views.",
-    "Reconstructed GitHub repositories surpassed 84,000 stars and 82,000 forks.",
-    "The codebase exposed ~44 feature flags, including a Tamagotchi-style terminal pet with 18 species variants.",
-    "An anti-distillation mode and a sentiment detector matching strings like <code>wtf|ffs|shit</code> were present in the leaked code.",
-    "Bun issue #28001 documents the bundler generating source maps despite <code>development: false</code>.",
+    "漏洩した .map ファイルは 59.8 MB で、約 1,906ファイル、51万2,000〜51万3,000行の TypeScript にマッピングされた。",
+    "2026年3月31日の @Fried_rice による開示投稿は 2,800万回以上の閲覧を集めた。",
+    "再構築された GitHub リポジトリは 8万4,000 stars と 8万2,000 forks を超えた。",
+    "コードベースには約 44個の機能フラグが露出し、18種類のバリエーションを持つたまごっち風ターミナルペットも含まれた。",
+    "漏洩したコードにはアンチ蒸留モードや <code>wtf|ffs|shit</code> などにマッチする感情検出器も含まれていた。",
+    "Bun issue #28001 では、<code>development: false</code> でもバンドラーがソースマップを生成する挙動が文書化されている。",
   ],
   reactions: [
     {
       platform: "x",
       author: "Chaofan Shou (@Fried_rice)",
       meta: "Original disclosure post; 28M+ views",
-      quote: "Claude code source code has been leaked via a map file in their npm registry!",
+      quote: "Claude Code のソースコードが npm レジストリの map ファイルから漏れている！",
       url: "https://x.com/Fried_rice/status/2038894956459290963",
     },
     {
@@ -32,7 +32,7 @@ export const detail: EventDetail = {
       author: "Alex Volkov (@altryne)",
       meta: "Reaction praising Boris Cherny's handling",
       quote:
-        "Claude Code creator Boris Cherny does exactly what a company should be doing, calm, open replies about today's leak. Confirming that this wasn't an issue with @bunjavascript and was a ... developer error. Not AI agent, developer.",
+        "Claude Code 創業者の Boris Cherny は、企業がやるべきことを正確にやっている。冷静でオープンな対応。これは @bunjavascript の問題ではなく、開発者のミスだ。AI エージェントではなく、人間の開発者の。",
       url: "https://x.com/altryne/status/2039169550122692608",
     },
     {
@@ -40,14 +40,14 @@ export const detail: EventDetail = {
       author: "treexs",
       meta: "Top comment on the main leak thread (2,095 points)",
       quote:
-        "The big loss for Anthropic here is how it reveals their product roadmap via feature flags. A big one is their unreleased 'assistant mode' with code name kairos.",
+        "Anthropic にとって最大の損失は、機能フラグ経由で製品ロードマップが暴露されたことだ。大きなものの一つは、未発表の 'assistant mode'、コードネーム kairos だ。",
       url: "https://news.ycombinator.com/item?id=47584540",
     },
     {
       platform: "hackernews",
       author: "mdavid626",
       meta: "Comment on the 'Claude Code Unpacked' thread (1,128 points)",
-      quote: "How the hell is it 500k lines?",
+      quote: "どうやって 50万行もあるんだ？",
       url: "https://news.ycombinator.com/item?id=47597085",
     },
     {
@@ -55,18 +55,18 @@ export const detail: EventDetail = {
       author: "jruohonen",
       meta: "Comment on the 'Claude Code Unpacked' visual guide thread",
       quote:
-        "Thanks, I'll use this for teaching next week (on what not to do). BashTool.ts :D But, in general, I guess it just shows yet again that the emperor has no clothes.",
+        "来週の授業で使わせてもらう（やってはいけない例として）。BashTool.ts :D でも全体的に、またしても皇帝に新衣はないってことだよな。",
       url: "https://news.ycombinator.com/item?id=47597085",
     },
     {
       platform: "hackernews",
       author: "AnimalMuppet",
       meta: "In the 'undercover mode' / fake tools thread (1,376 points), on the feature that hides AI authorship",
-      quote: "I don't do business with people who lie to me.",
+      quote: "嘘をつく相手とはビジネスをしない。",
       url: "https://news.ycombinator.com/item?id=47586778",
     },
   ],
   images: [],
   aftermath:
-    "As of early April 2026, Anthropic maintains that no sensitive customer data or credentials were exposed, which addresses the narrowest version of the question. The mirrors, however, had already accumulated 84,000 stars and 82,000 forks, and the company's subsequent copyright takedown campaign—however brief—suggested that its commitment to freely available code lasts only until the code is its own. The bundler behavior that helped generate the leak is still documented in Bun issue #28001 for any publisher who wishes not to repeat the mistake.",
+    "2026年4月初め現在、Anthropic は機密性の高い顧客データや認証情報が流出していないと主張し続けている。これは最も狭義の質問に答えている。しかし、ミラーはすでに 8万4,000 stars と 8万2,000 forks を集めており、その後の著作権削除キャンペーン——短いものだったが——は、同社の「自由に利用可能なコードへのコミットメント」が、自社のコードが対象になるまでしか持続しないことを示唆している。漏洍を助長したバンドラーの挙動は、まだ Bun issue #28001 に文書化されており、同じミスを繰り返したくない出版社向けの参考になっている。",
 };

@@ -2,91 +2,91 @@ import type { EventDetail } from "@/data/event-detail";
 
 export const detail: EventDetail = {
   slug: "claude-code-pro-paywall",
-  deck: "Anthropic turned the green checkmark on a $20 product into a red X, called it a 2% test, and gave OpenAI a free billboard for its rival coding tool.",
+  deck: "Anthropicは20ドル製品の緑のチェックマークを赤いXに変え、それを2%のテストと呼び、OpenAIにライバルコーディングツールのための無料看板を提供した。",
   body: [
-    'On the afternoon of April 21, 2026, <a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/">the checkmark next to Claude Code in the Pro column of Anthropic\'s pricing page turned into a red X</a>, while Max 5x ($100/mo) and Max 20x kept their green checkmarks. The same afternoon, Anthropic <a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/">rewrote a support article</a> from "Using Claude Code with your Pro or Max plan" to "Using Claude Code with your Max plan," with no changelog, email, or announcement. AI-industry critic Ed Zitron flagged the change on Bluesky; <a href="https://hn.algolia.com/api/v1/items/47854477">his post became the source for a front-page Hacker News thread that drew 328 points and 206 comments</a>.',
-    'Anthropic Head of Growth Amol Avasare then <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/">said on X that this was a "small test on ~2 percent of new prosumer signups"</a> and that existing subscribers were unaffected. He later <a href="https://www.aol.com/articles/anthropics-claude-code-pricing-pain-193347355.html">conceded the public-facing rollout was "understandably confusing for the 98% of folks not part of the experiment"</a> and reverted both the landing page and docs changes. The pricing page was restored within hours; <a href="https://www.morphllm.com/claude-code-pricing">by April 23 claude.com/pricing again showed the green checkmark for Claude Code on Pro</a>, though Anthropic said the 2% server-side experiment remained active.',
-    'Avasare framed the test around shifting demand. <a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/">Max launched a year earlier, in April 2025, without Claude Code and was "designed for heavy chat usage," but "the way people actually use a Claude subscription has changed fundamentally" and "our current plans weren\'t built for this."</a> He also <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/">pledged that future changes affecting existing subscribers would come with notice: "When we do land on something, if it affects existing subscribers you\'ll get plenty of notice before anything changes. Will hear it from us, not a screenshot on X or Reddit."</a> That promise now exists because of how this one was discovered.',
-    'The timing was not ideal. <a href="https://www.cnbc.com/2026/04/09/openai-chatgpt-pro-subscription-anthropic-claude-code.html">OpenAI had launched its own $100/month ChatGPT Pro tier in early April 2026</a> to compete with Anthropic\'s Claude Code offerings. <a href="https://www.aol.com/articles/anthropics-claude-code-pricing-pain-193347355.html">OpenAI CEO Sam Altman replied "ok boomer" to Anthropic\'s head of growth on X, then added "tongiht i have had a couple of drinks," and posted "We want you to have a lot of AI!" with a link to OpenAI\'s rival coding tool</a>. <a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/">OpenAI Codex lead Thibault Sottiaux contrasted his product: "Codex will continue to be available both in the FREE and PLUS ($20) plans... Transparency and trust are two principles we will not break."</a>',
-    'The incident was <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/">reported across The Register (by Thomas Claburn), Ars Technica, Business Insider, and Simon Willison\'s blog, all on or around April 22, 2026</a>. <a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/">Some Pro users reported their existing Claude Code access still worked during the brief removal</a>, which only strengthened the impression that this was a pricing experiment seen by everyone except the people running it.',
+    '2026年4月21日の午後、<a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/">Anthropicの価格ページPro欄のClaude Code横のチェックマークが赤いXに変わった</a>。一方、Max 5x（月額100ドル）とMax 20xの緑のチェックマークは維持された。同じ午後、Anthropicはサポート記事を<a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/">「ProまたはMaxプランでClaude Codeを使用する」から「MaxプランでClaude Codeを使用する」に書き換えた</a>。チェンジログ、メール、発表はなかった。AI業界批評家のEd ZitronがBlueskyでこの変更を指摘し、<a href="https://hn.algolia.com/api/v1/items/47854477">彼の投稿はHacker Newsのトップページスレのソースとなり、328ポイントと206コメントを集めた</a>。',
+    'Anthropicのグロース責任者Amol Avasareはその後、Xで<a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/">これは「新規プロシューマー登録の約2%に対する小さなテスト」であり、既存の加入者には影響しない</a>と述べた。彼は後に<a href="https://www.aol.com/articles/anthropics-claude-code-pricing-pain-193347355.html">「実験に含まれていない98%の人々にとっては理解しがたい展開だった</a>」と認め、ランディングページとドキュメントの両方を元に戻した。価格ページは数時間以内に復元された。Anthropicは<a href="https://www.morphllm.com/claude-code-pricing">4月23日までにはclaude.com/pricingで再びProのClaude Codeに緑のチェックマーク</a>が表示されたと述べたが、サーバー側の2%実験は依然としてアクティブだと述べた。',
+    'Avasareはテストを需要のシフトとして位置づけた。<a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/">Maxは1年前の2025年4月にClaude Codeなしでローンチし、「ヘビーチャット利用向けに設計された」が、「Claudeサブスクリプションの実際の使われ方が根本的に変化した」ため「現在のプランはこれ向けに作られていなかった」</a>と述べた。彼はまた<a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/">、今後既存の加入者に影響する変更があれば通知すると約束した。「最終的なものが決まったら、既存の加入者に影響する場合は、変更が起こる前に十分な通知をします。XやRedditのスクリーンショットではなく、私たちからお知らせします。」</a>この約束は、この変更がどう発覚したかのためだけに存在する。',
+    'タイミングは最適とは言えなかった。<a href="https://www.cnbc.com/2026/04/09/openai-chatgpt-pro-subscription-anthropic-claude-code.html">OpenAIは2026年4月初旬に、月額100ドルの自社ChatGPT ProティアをAnthropicのClaude Codeオファリングと競合させてローンチしていた</a>。<a href="https://www.aol.com/articles/anthropics-claude-code-pricing-pain-193347355.html">OpenAI CEOのSam AltmanはXでAnthropicのグロース責任者に「ok boomer」と返答し、その後「tonight i have had a couple of drinks」と追加し、「We want you to have a lot of AI!」とOpenAIのライバルコーディングツールへのリンクを投稿した</a>。<a href="https://simonwillison.net/2026/apr/22/claude-code-confusion/">OpenAI CodexリードのThibault Sottiauxは自社製品を対比させた。「Codexは引き続き無料およびPLUS（20ドル）の両方のプランで利用可能です…透明性と信頼は、私たちが決して破らない2つの原則です。」</a>',
+    'この事件は<a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/">The Register（Thomas Claburn氏）、Ars Technica、Business Insider、Simon Willisonのブログなどで、2026年4月22日前後に報じられた</a>。<a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/">一部のProユーザーは、短期間の削除中も既存のClaude Codeアクセスが引き続き機能したと報告した</a>。これは、運営側以外の全員に見えていた価格実験だったという印象をさらに強めた。',
   ],
   receipts: [
-    "The pricing page change and support article rewrite happened on the afternoon of April 21, 2026 with no changelog, email, or announcement.",
-    "Max 5x ($100/mo) and Max 20x kept the green checkmark; only the $20 Pro column flipped to a red X.",
-    "Ed Zitron's Bluesky post sourcing the Hacker News thread drew 328 points and 206 comments.",
-    'Amol Avasare called it a ~2% test, then conceded it was "understandably confusing for the 98%."',
-    "Both changes were reverted within hours; by April 23 the green checkmark was back on Pro.",
-    'Thibault Sottiaux stated Codex would remain in the FREE and PLUS ($20) plans and cited "transparency and trust."',
+    "価格ページの変更とサポート記事の書き換えは2026年4月21日の午後に発生し、チェンジログ、メール、発表はなかった。",
+    "Max 5x（月額100ドル）とMax 20xは緑のチェックマークを維持；20ドルのPro欄だけが赤いXに変わった。",
+    "Ed ZitronのBluesky投稿がHacker Newsスレのソースとなり、328ポイントと206コメントを集めた。",
+    "Amol Avasareはこれを約2%のテストと呼び、その後『98%にとって理解しがたい』と認めた。",
+    "両方の変更は数時間以内に巻き戻され、4月23日までにProの緑のチェックマークは復元された。",
+    "Thibault Sottiauxは、Codexは無料およびPLUS（20ドル）の両方のプランに留まると述べ、『透明性と信頼』を掲げた。",
   ],
   reactions: [
     {
       platform: "x",
       author: "Sam Altman (@sama)",
-      meta: 'Reply to Anthropic\'s head of growth; later added "tongiht i have had a couple of drinks"',
+      meta: 'Anthropicグロース責任者への返信；後に「tonight i have had a couple of drinks」と追加',
       quote: "ok boomer",
       url: "https://www.aol.com/articles/anthropics-claude-code-pricing-pain-193347355.html",
     },
     {
       platform: "x",
       author: "Amol Avasare (@TheAmolAvasare), Anthropic Head of Growth",
-      meta: "Anthropic's first public response on X",
+      meta: "AnthropicのXでの初の公式応答",
       quote:
-        "For clarity, we're running a small test on ~2 percent of new prosumer signups. Existing Pro and Max subscribers aren't affected.",
+        "明確にするために、新規プロシューマー登録の約2%を対象に小さなテストを行っている。既存のProおよびMax加入者には影響しない。",
       url: "https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/",
     },
     {
       platform: "other",
       author: "Simon Willison",
-      meta: "From his blog post on the confusion",
+      meta: "混乱に関するブログ投稿から",
       quote:
-        "A tweet from an employee is not the way to make an announcement like this. I wasted a solid hour of my afternoon trying to figure out what had happened here.",
+        "従業員のツイートは、このような発表をする方法ではない。何が起こったのか理解しようと、午後のまともな1時間を無駄にした。",
       url: "https://simonwillison.net/2026/apr/22/claude-code-confusion/",
     },
     {
       platform: "other",
       author: "Simon Willison",
-      meta: "Blog post, simonwillison.net",
+      meta: "simonwillison.netのブログ投稿",
       quote:
-        "A whole lot of people got scared or angry or both that a service they relied on was about to be rug-pulled.",
+        "多くの人々が、自分たちが依存しているサービスがラグプルされようとしていることに怖がり、怒り、あるいはその両方になった。",
       url: "https://simonwillison.net/2026/apr/22/claude-code-confusion/",
     },
     {
       platform: "hackernews",
       author: "verdcircuit",
-      meta: "HN thread (328 points, 206 comments)",
+      meta: "HNスレ（328ポイント、206コメント）",
       quote:
-        "This is not so much about capacity, I pay $X and I get a certain amount. This is much more about removing access to a feature I have access to.",
+        "これは容量の問題ではなく、Xドル払って一定量を得ている。これは、私がアクセスできる機能へのアクセスを削除することだ。",
       url: "https://news.ycombinator.com/item?id=47854477",
     },
     {
       platform: "hackernews",
       author: "takihito",
-      meta: "Comment on The Register HN submission",
+      meta: "The RegisterのHN投稿へのコメント",
       quote:
-        "Are they trying to reduce cloud servers needed for AI because they're running out? I wish they'd be a little more honest in their response.",
+        "AIに必要なクラウドサーバーを削減しようとしているのか、枯渇しているからか？もう少し正直に応答してほしい。",
       url: "https://news.ycombinator.com/item?id=47857130",
     },
   ],
   images: [
     {
       src: "/events/claude-code-pro-paywall/simonwillison-pricing-redx.jpg",
-      alt: "Anthropic pricing table showing Claude Code marked unavailable with a red X under the $20 Pro plan",
+      alt: "20ドルProプランの欄でClaude Codeが赤いXで利用不可と表示されたAnthropicの価格表",
       caption:
-        "Anthropic's pricing comparison matrix showing Claude Code with a red X (unavailable) on the Pro plan column. Credit: Simon Willison.",
+        "Anthropicの価格比較マトリクス。Proプラン欄でClaude Codeが赤いX（利用不可）と表示されている。Credit: Simon Willison。",
       sourceUrl: "https://simonwillison.net/2026/apr/22/claude-code-confusion/",
       width: 1446,
       height: 948,
     },
     {
       src: "/events/claude-code-pro-paywall/register-composite.jpg",
-      alt: "Composite screenshot of Anthropic web pages showing inconsistent Claude Code Pro plan availability",
+      alt: "Claude CodeのProプラン提供状況の矛盾を示すAnthropic Webページの複合スクリーンショット",
       caption:
-        "The Register's composite of Anthropic web pages showing the conflicting Claude Code subscription information. Credit: The Register.",
+        "The Registerが作成したAnthropic Webページの複合画像。矛盾するClaude Codeのサブスクリプション情報を示している。Credit: The Register。",
       sourceUrl: "https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/",
       width: 960,
       height: 656,
     },
   ],
   aftermath:
-    "Anthropic said the underlying 2% experiment stayed live, so the pricing page may still be A/B testing a future you are not allowed to see yet. The company now has a public commitment to warn existing subscribers before changes, a pledge that exists precisely because this one leaked. OpenAI, meanwhile, has a $20 coding tool and a screenshot of Anthropic's head of growth promising you will not learn about pricing changes from social media.",
+    "Anthropicは、基盤となる2%の実験は生きていると述べたので、価格ページはまだ、あなたには見せられない未来をA/Bテストしている可能性がある。同社は現在、既存の加入者に変更前に警告するとの公的約束を持つ。この約束は、まさにこの変更がリークしたためだけに存在する。一方、OpenAIは20ドルのコーディングツールと、Anthropicのグロース責任者がソーシャルメディアで価格変更を知らせないと約束しているスクリーンショットを手に入れた。",
 };

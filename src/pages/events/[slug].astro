@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { timelineEvents } from "@/data/timeline";
 import type { TimelineEvent } from "@/data/timeline";
 import type { EventDetail, ReactionPlatform } from "@/data/event-detail";
-import { categoryStyles, getIncidentLayers } from "@/lib/event-visuals";
+import { categoryStyles, displayCategory, getIncidentLayers } from "@/lib/event-visuals";
 
 export function getStaticPaths() {
   return timelineEvents.map((event, index) => ({
@@ -76,7 +76,7 @@ const articleSchema = {
             class="inline-flex items-center gap-1.5 font-medium text-(--muted) transition hover:text-(--ink)"
           >
             <span aria-hidden="true">&larr;</span>
-            The full timeline
+            タイムラインに戻る
           </a>
           <button
             id="copy-link"
@@ -97,7 +97,7 @@ const articleSchema = {
               <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
               <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
             </svg>
-            <span data-copy-label>Copy link</span>
+            <span data-copy-label>リンクをコピー</span>
           </button>
         </nav>
 
@@ -106,14 +106,14 @@ const articleSchema = {
             <span
               class={`inline-flex items-center rounded-full border px-2.5 py-px font-medium leading-4 ${categoryStyles[event.category]}`}
             >
-              {event.category}
+              {displayCategory(event.category)}
             </span>
             <time datetime={event.date} class="font-semibold text-(--muted)">
               {event.period}
             </time>
             <span class="text-(--muted)" aria-hidden="true">&middot;</span>
             <span class="text-(--muted)">
-              Incident {index + 1} of {timelineEvents.length}
+              全 {timelineEvents.length} 件中 {index + 1} 件目
             </span>
           </div>
           <h1
@@ -172,7 +172,7 @@ const articleSchema = {
               receipts.length > 0 && (
                 <aside class="event-receipts mt-10">
                   <h2 class="ui-text text-sm font-semibold uppercase tracking-[0.08em] text-(--muted)">
-                    The receipts
+                    レシート (= 数字)
                   </h2>
                   <ul class="mt-4 space-y-3">
                     {receipts.map((receipt) => (
@@ -207,7 +207,7 @@ const articleSchema = {
                                 rel="noopener noreferrer"
                                 class="underline decoration-1 underline-offset-[0.2em] transition hover:text-(--ink)"
                               >
-                                Source
+                                元記事
                               </a>
                             </>
                           )}
@@ -223,7 +223,7 @@ const articleSchema = {
               reactions.length > 0 && (
                 <section class="mt-14">
                   <h2 class="text-[1.5rem] font-medium leading-tight text-(--ink)">
-                    What the internet said
+                    ネットの反応
                   </h2>
                   <div class="mt-6 grid gap-4 sm:grid-cols-2">
                     {reactions.map((reaction) => {
@@ -267,7 +267,7 @@ const articleSchema = {
               detail?.aftermath && (
                 <section class="event-aftermath mt-14">
                   <h2 class="ui-text text-sm font-semibold uppercase tracking-[0.08em] text-(--muted)">
-                    Where it stands
+                    現状
                   </h2>
                   <p class="mt-4 text-[1.12rem] leading-[1.7] text-(--ink-soft)" set:html={detail.aftermath} />
                 </section>
@@ -277,15 +277,14 @@ const articleSchema = {
             {
               !detail && (
                 <p class="ui-text mt-10 rounded-[3px] border border-dashed border-(--line) bg-(--canvas) px-4 py-3 text-sm text-(--muted)">
-                  The deep-dive for this incident is still being written. The summary above is the
-                  short version.
+                  このインシデントの深掘りは執筆中です。上の要約はダイジェスト版になります。
                 </p>
               )
             }
 
             <section class="mt-14 border-t border-(--line-soft) pt-8">
               <h2 class="ui-text text-sm font-semibold uppercase tracking-[0.08em] text-(--muted)">
-                Sources
+                一次ソース
               </h2>
               <div class="event-sources mt-4 flex flex-wrap gap-2">
                 {
@@ -306,7 +305,7 @@ const articleSchema = {
                         aria-hidden="true"
                       />
                       <span class="truncate">{source.title}</span>
-                      <span class="sr-only">opens in a new tab</span>
+                      <span class="sr-only">新しいタブで開く</span>
                     </a>
                   ))
                 }
@@ -320,7 +319,7 @@ const articleSchema = {
                 previousEvent ? (
                   <a href={`/events/${previousEvent.slug}/`} class="event-pagination-link">
                     <span class="ui-text text-xs font-semibold uppercase tracking-[0.08em] text-(--muted)">
-                      &larr; Previous incident
+                      &larr; 前のインシデント
                     </span>
                     <span class="mt-1.5 block text-balance text-[1.05rem] font-medium leading-snug text-(--ink)">
                       {previousEvent.title}
@@ -337,7 +336,7 @@ const articleSchema = {
                     class="event-pagination-link sm:text-right"
                   >
                     <span class="ui-text text-xs font-semibold uppercase tracking-[0.08em] text-(--muted)">
-                      Next incident &rarr;
+                      次のインシデント &rarr;
                     </span>
                     <span class="mt-1.5 block text-balance text-[1.05rem] font-medium leading-snug text-(--ink)">
                       {nextEvent.title}
@@ -361,13 +360,13 @@ const articleSchema = {
     try {
       await navigator.clipboard.writeText(window.location.href);
       if (copyLabel) {
-        copyLabel.textContent = "Copied!";
+        copyLabel.textContent = "コピーしました!";
         setTimeout(() => {
-          copyLabel.textContent = "Copy link";
+          copyLabel.textContent = "リンクをコピー";
         }, 1600);
       }
     } catch {
-      window.prompt("Copy this link:", window.location.href);
+      window.prompt("このリンクをコピー:", window.location.href);
     }
   });
 </script>
